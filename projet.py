@@ -1,40 +1,42 @@
 import random
 import meta_bdd
+from Student import *
+from mode import Mode
 
-def next_exercice(dico,student,mode):
+def next_exercice(dico,student,goal,mode):
+	if (mode == Mode.decouverte):
+		for key in dico_meta.keys():
+			tag = dico_meta[key]['tag']
+			for tag_value in tag.items():
+				if (tagcomparaison(tag_value,('program',1))):
+					return tag
+	else if (mode == Mode.revision):
+		pass
+	else if (mode == Mode.remise):
+		pass
 	
+			
 	pass
 	#Gros algorithme permettant de recommander un exercice 
-def generation():
-	return random.randint(0,100)
-	#TODO generer une note aléatoire à l'élève par rapport à son profil
-	
-def update_competence():
-	pass
 
-def refuser(prob):
-	randomvalue = random.random()
-	if (prob>randomvalue):
-		return True
-	return False
-	
-def update_comptence():
-	pass
-	#TODO update la compétence de l'élève
+#Comparison de tag
+def tagcomparaison(v1,v2):
+	return v1 == v2
 	
 if __name__ == '__main__':
-	
+	goal = {'program':1}
+	s = Student(50,100,0.1,dict())
 	dico_meta = meta_bdd.meta
-	for dico_element in dico_meta.items():
-		print(dico_element)
+	for dico in dico_meta.values():
+		print(dico)
 	while(True):
-		next_exercice()
-		mark = generation()
-		refus = refuser(0.2)
+		skills = next_exercice(dico_meta,s,goal,Mode.decouverte)
+		mark = s.genMark()
+		refus = s.refuse()
 		if refus:
 			print("refusé")
 			break
-		update_competence()
+		s.updateProfil(skills,mark)
 	
 		
 	
