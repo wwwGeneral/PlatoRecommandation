@@ -1,4 +1,4 @@
-﻿from random import *
+﻿from random import random,randint
 class Student:
     """Classe définissant un étudiant"""
 
@@ -11,14 +11,22 @@ class Student:
     def updateProfil(self, skills, mark):
         """Permet de mettre à jour le profil de l'étudiant avec ses nouvelles compétences"""
         for a in skills.items():
-            if(not(self.profil.has_key(a[0]))):
-                self.profil[a[0]] = a[1]*(mark/100)
-            else:
-                newMark = self.profil[a[0]]+(a[1]*(mark/100))/self.profil[a[0]]
-                if(newMark <= 10):
-                    self.profil[a[0]] = newMark
+            if(mark >= 70):
+                if(not(self.profil.get((a[0])))):
+                    self.profil[a[0]] = a[1]*(mark/100)
                 else:
-                    self.profil[a[0]] = 10
+                    newMark = (a[1]*(mark/100) + self.profil[a[0]]*2)/3
+                    if(newMark <= 10):
+                        if(a[1] > self.profil[a[0]]):
+                            self.profil[a[0]] = newMark
+                        else:
+                            self.profil[a[0]] = self.profil[a[0]]
+                    else:
+                        self.profil[a[0]] = 10
+            elif(mark < 50):
+                if(self.profil.get((a[0])) and a[1]<=self.profil[a[0]]):
+                    self.profil[a[0]] = (self.profil[a[0]]*3 + a[1]*(mark/100))/4
+
 
     def refuse(self):
         randomvalue = random()
@@ -26,16 +34,11 @@ class Student:
             return True
         return False
 
-    def getMarkMin(self):
-        return self.markMin
-
-    def getMarkMax(self):
-        return self.markMax
-
     def genMark(self):
         return randint(self.markMin,self.markMax)
 
 if __name__ == '__main__':
-    s = Student(90,100,0.4,{ 'program':1,})
-    print(s.genMark())
-    print(s.refuse())
+    s = Student(30,30,0.4,{'program':4})
+    print(s.profil)
+    s.updateProfil({'program':5},s.genMark())
+    print(s.profil)
