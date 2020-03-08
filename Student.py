@@ -27,7 +27,6 @@ class Student:
                 if(self.profil.get((a[0])) and a[1]<=self.profil[a[0]]):
                     self.profil[a[0]] = (self.profil[a[0]]*3 + a[1]*(mark/100))/4
 
-
     def refuse(self):
         randomvalue = random()
         if (self.pRefus>randomvalue):
@@ -36,9 +35,3 @@ class Student:
 
     def genMark(self):
         return randint(self.markMin,self.markMax)
-
-if __name__ == '__main__':
-    s = Student(30,30,0.4,{'program':4})
-    print(s.profil)
-    s.updateProfil({'program':5},s.genMark())
-    print(s.profil)
