@@ -10,9 +10,9 @@ def next_exercice(dico,student,goal,mode):
 			for tag_value in tag.items():
 				if (tagcomparaison(tag_value,('program',1))):
 					return tag
-	else if (mode == Mode.revision):
+	elif (mode == Mode.revision):
 		pass
-	else if (mode == Mode.remise):
+	elif (mode == Mode.remise):
 		pass
 	
 			
