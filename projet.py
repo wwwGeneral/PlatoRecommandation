@@ -40,7 +40,7 @@ if __name__ == '__main__':
 		nb_exo = 20
 		while(nb_exo != 0):
 			nb_exo-=1
-			exo = next_exercice(dico_meta,s,Mode.decouverte)
+			exo = next_exercice(dico_meta,s,mode)
 			mark = s.genMark()
 			refus = s.refuse()
 			if refus:
