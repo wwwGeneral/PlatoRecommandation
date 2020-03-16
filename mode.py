@@ -1,9 +1,9 @@
 from enum import Enum,auto
 
 class Mode(Enum):
-	decouverte= 1
-	revision = 2
-	remise = 3
+	decouverte = "decouverte"
+	revision = "révision"
+	remise = "révision"
 	
 	
 	def describe(self):
