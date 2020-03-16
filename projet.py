@@ -1,4 +1,3 @@
-
 import random
 import meta_bdd
 from Student import *
@@ -14,14 +13,16 @@ def next_exercice(dico,student,mode):
 	elif (mode == Mode.revision):
 		pass
 	elif (mode == Mode.remise):
-		pass	
-	pass
+		for a in student.profil.keys():
+			skills = student.profil[key]['skills']
+			for skill in skills.items():
+				if (tag == skill[0]):
+					for key in dico_meta.keys():
+						tagExo = dico_meta[key]['tag']
+						for tag_value in tag.items():
+							if (tag == tag_value[0] AND tag_value[1] == skill[1]):
+								return 	key
 	#Gros algorithme permettant de recommander un exercice 
-
-def getEnumList():
-	return list(map(Mode.getValue,Mode))
-
-
 
 if __name__ == '__main__':
 	skills = list()
@@ -39,15 +40,14 @@ if __name__ == '__main__':
 	dico_meta = meta_bdd.meta
 
 	for s in students:
-		print(*getEnumList())
-		mode = input('Choissisez un des modes disponibles : ')
+		mode = input('Choissisez un mode : ')
 		subject = input('Choisissez une matière : ')
 		if(mode != Mode.decouverte):
 			tag = input('Choisissez une notion : ')
 		nb_exo = 20
 		while(nb_exo != 0):
 			nb_exo-=1
-			exo = next_exercice(dico_meta,s,mode)
+			exo = next_exercice(dico_meta,s,Mode.decouverte)
 			mark = s.genMark()
 			refus = s.refuse()
 			if refus:
@@ -55,3 +55,6 @@ if __name__ == '__main__':
 				continue
 			s.updateProfil(exo,mark)
 			print("Note reçu : "+str(mark)+" | profil : ", s.profil)
+	
+		
+	
