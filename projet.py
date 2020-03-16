@@ -26,10 +26,10 @@ def next_exercice(dico,student,mode):
 
 if __name__ == '__main__':
 	skills = list()
-	skills.append({'program':1, 'function':1})
-	skills.append({'string':1, 'array':1, 'program':4})
+	skills.append({'C': { 'skills': {'program':1, 'function':1}}})
+	skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':4}}})
 	skills.append({})
-	skills.append({'string':1, 'array':1, 'program':1,'function':1, 'variable':1})
+	skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':1,'function':1, 'variable':1}}})
 
 	students = list()
 	students.append(Student(30,75,0,skills[2]))
