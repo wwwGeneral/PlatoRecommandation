@@ -33,6 +33,10 @@ if __name__ == '__main__':
 	dico_meta = meta_bdd.meta
 
 	for s in students:
+		mode = input('Choissisez un mode : ')
+		subject = input('Choisissez une matière : ')
+		if(mode != Mode.decouverte):
+			tag = input('Choisissez une notion : ')
 		nb_exo = 20
 		while(nb_exo != 0):
 			nb_exo-=1
@@ -41,7 +45,7 @@ if __name__ == '__main__':
 			refus = s.refuse()
 			if refus:
 				print("refusé")
-				break
+				continue
 			s.updateProfil(exo,mark)
 			print("Note reçu : "+str(mark)+" | profil : ", s.profil)
 	
