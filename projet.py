@@ -8,7 +8,7 @@ def next_exercice(dico,student,goal,mode):
 		for key in dico_meta.keys():
 			tag = dico_meta[key]['tag']
 			for tag_value in tag.items():
-				if (tagcomparaison(tag_value,('program',1))):
+				if (tag_value==('program',1)):
 					return tag
 	elif (mode == Mode.revision):
 		pass
@@ -19,10 +19,6 @@ def next_exercice(dico,student,goal,mode):
 	pass
 	#Gros algorithme permettant de recommander un exercice 
 
-#Comparison de tag
-def tagcomparaison(v1,v2):
-	return v1 == v2
-	
 if __name__ == '__main__':
 	goal = {'program':1}
 	s = Student(50,100,0.1,dict())
