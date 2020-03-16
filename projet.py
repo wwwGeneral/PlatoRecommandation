@@ -31,8 +31,11 @@ if __name__ == '__main__':
 	students.append(Student(80,100,0.3,skills[3]))
 
 	dico_meta = meta_bdd.meta
-
+	nb = 1
 	for s in students:
+		print("===========================================")
+		print("Elève numéro "+str(nb))
+		nb+=1
 		mode = input('Choissisez un mode : ')
 		subject = input('Choisissez une matière : ')
 		if(mode != Mode.decouverte):
@@ -48,6 +51,7 @@ if __name__ == '__main__':
 				continue
 			s.updateProfil(exo,mark)
 			print("Note reçu : "+str(mark)+" | profil : ", s.profil)
+		print("===========================================")
 	
 		
 	
