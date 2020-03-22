@@ -65,7 +65,14 @@ def next_exercice(dico,student,mode):
                 if (tag_value==('program',1)):
                     return tag
     elif (mode == Mode.revision):
-        pass
+        for key in dico_meta.keys():
+            if (dico_meta[key]['subject'] == subject):
+                tag = dico_meta[key]['tag']
+                for k,v in dico_meta[key]['tag'].items():
+                    for key,value in student.profil.items() :
+                        if ((k == key) & (v == value)):
+                            return tag
+
     elif (mode == Mode.remise):
         for a in student.profil.keys():
             skills = student.profil[key]['skills']
@@ -86,14 +93,16 @@ if __name__ == '__main__':
     skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':1,'function':1, 'variable':1}}})
 
     students = list()
-    students.append(Student(30,75,0,skills[2]))
-    students.append(Student(50,100,1,skills[0]))
-    students.append(Student(50,100,0.5,skills[1]))
-    students.append(Student(80,100,0.3,skills[3]))
+    students.append(Student("Jean",30,75,0,skills[2]))
+    students.append(Student("Pierre",50,100,1,skills[0]))
+    students.append(Student("Albert",50,100,0.5,skills[1]))
+    students.append(Student("Marcel",80,100,0.3,skills[3]))
 
     dico_meta = meta_bdd.meta
 
     for s in students:
+        print("=====================================================================================")
+        print("Session de : "+s.name)
         mode = Mode[input('Choissisez un des modes disponibles : ')]
         subject = subject()
         if(mode != Mode.decouverte):
@@ -108,7 +117,5 @@ if __name__ == '__main__':
                 print("refusé")
                 continue
             s.updateProfil(subject,exo,mark)
+            print("Exercice "+str(20-nb_exo))
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
-    
-        
-    
