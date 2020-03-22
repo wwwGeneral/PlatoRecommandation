@@ -20,7 +20,7 @@ def next_exercice(dico,student,mode):
 					for key in dico_meta.keys():
 						tagExo = dico_meta[key]['tag']
 						for tag_value in tag.items():
-							if (tag == tag_value[0] AND tag_value[1] == skill[1]):
+							if (tag == tag_value[0] and tag_value[1] == skill[1]):
 								return 	key
 	#Gros algorithme permettant de recommander un exercice 
 
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 	dico_meta = meta_bdd.meta
 
 	for s in students:
-		mode = input('Choissisez un mode : ')
+		mode = Mode[input('Choissisez un des modes disponibles : ')]
 		subject = input('Choisissez une matière : ')
 		if(mode != Mode.decouverte):
 			tag = input('Choisissez une notion : ')
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 			if refus:
 				print("refusé")
 				continue
-			s.updateProfil(exo,mark)
+			s.updateProfil(subject,exo,mark)
 			print("Note reçu : "+str(mark)+" | profil : ", s.profil)
 	
 		
