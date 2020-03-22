@@ -2,7 +2,8 @@
 class Student:
     """Classe définissant un étudiant"""
 
-    def __init__(self, markMin, markMax, pRefus, profil):
+    def __init__(self, name, markMin, markMax, pRefus, profil):
+        self.name = name
         self.markMin = markMin
         self.markMax = markMax
         self.pRefus = pRefus
