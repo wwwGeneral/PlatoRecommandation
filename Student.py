@@ -10,6 +10,7 @@ class Student:
 
     def updateProfil(self, subject, skills, mark):
         """Permet de mettre à jour le profil de l'étudiant avec ses nouvelles compétences"""
+        print(skills)
         for a in skills.items():
             if(mark >= 70):
                 if(not(self.profil.get(subject))):
