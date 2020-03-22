@@ -65,7 +65,14 @@ def next_exercice(dico,student,mode):
                 if (tag_value==('program',1)):
                     return tag
     elif (mode == Mode.revision):
-        pass
+        for key in dico_meta.keys():
+            if (dico_meta[key]['subject'] == subject):
+                tag = dico_meta[key]['tag']
+                for k,v in dico_meta[key]['tag'].items():
+                    for key,value in student.profil.items() :
+                        if ((k == key) & (v == value)):
+                            return tag
+
     elif (mode == Mode.remise):
         for a in student.profil.keys():
             skills = student.profil[key]['skills']
@@ -109,6 +116,3 @@ if __name__ == '__main__':
                 continue
             s.updateProfil(subject,exo,mark)
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
-    
-        
-    
