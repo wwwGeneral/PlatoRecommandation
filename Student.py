@@ -13,6 +13,8 @@ class Student:
         for a in skills.items():
             if(mark >= 70):
                 if(not(self.profil.get(subject))):
+                    self.profil[subject] = {}
+                    self.profil[subject]['skills'] = {}
                     self.profil[subject]['skills'][a[0]] = a[1]*(mark/100)
                 elif(not(self.profil[subject]['skills'].get((a[0])))):
                     self.profil[subject]['skills'][a[0]] = a[1]*(mark/100)
