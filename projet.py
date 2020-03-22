@@ -99,7 +99,7 @@ def next_exercice(dico,student,mode,subject,tag):
                                             print("Votre niveau est trop élevé ou trop bas")
                                             break
                                 else:
-                                    print("Il n'y a pas d'exercice correspondant au tag selectionner")
+                                    print("Il n'y a pas d'exercices correspondant au tag sélectionné")
                                     break
                         else:
                             print("Vous n'avez les prérequis")
@@ -108,7 +108,7 @@ def next_exercice(dico,student,mode,subject,tag):
                         print("Il n'y a pas d'exercice dans cette matière")
                         break
             else:
-                print("Vous n'avez pas la matière séléctionné dans votre profil")
+                print("Vous n'avez pas la matière sélectionné dans votre profil")
                 break    
     #Gros algorithme permettant de recommander un exercice 
 
