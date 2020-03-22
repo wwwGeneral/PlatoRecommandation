@@ -57,7 +57,7 @@ def notion(subject):
             continue
         else:
             return a
-def next_exercice(dico,student,mode):
+def next_exercice(dico,student,mode,subject,tag):
     if (mode == Mode.decouverte):
         for key in dico_meta.keys():
             tag = dico_meta[key]['tag']
@@ -101,21 +101,22 @@ if __name__ == '__main__':
     dico_meta = meta_bdd.meta
 
     for s in students:
+        tag =''
         print("=====================================================================================")
         print("Session de : "+s.name)
         mode = Mode[input('Choissisez un des modes disponibles : ')]
-        subject = subject()
+        subjectChoose = subject()
         if(mode != Mode.decouverte):
-            tag = notion(subject)
+            tag = notion(subjectChoose)
         nb_exo = 20
         while(nb_exo != 0):
             nb_exo-=1
-            exo = next_exercice(dico_meta,s,Mode.decouverte)
+            exo = next_exercice(dico_meta,s,mode,subjectChoose,tag)
             mark = s.genMark()
             refus = s.refuse()
             if refus:
                 print("refusé")
                 continue
-            s.updateProfil(subject,exo,mark)
+            s.updateProfil(subjectChoose,exo,mark)
             print("Exercice "+str(20-nb_exo))
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
