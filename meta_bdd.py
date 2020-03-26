@@ -438,24 +438,282 @@ meta = {
             'function':3,
         },
     },
+    
+    '/ComputerScience/C/exercices/array/apply_square.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Écrire une fonction qui calcule la puissance d'un nombre",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'array':2,
+            'pointer':1,
+        },
+        'prerequisites':
+        {
+            'function':3,
+        },
+    },
 
-    # '/ComputerScience/C/exercices/array/apply_square.pl':{},
-    # '/ComputerScience/C/exercices/array/average.pl':{},
-    # '/ComputerScience/C/exercices/array/displayarray.pl':{},
-    # '/ComputerScience/C/exercices/array/find_index_array.pl':{},
-    # '/ComputerScience/C/exercices/array/init2dtab.pl':{},
-    # '/ComputerScience/C/exercices/array/initcarre.pl':{},
-    # '/ComputerScience/C/exercices/array/sum_of_positives.pl':{},
+    '/ComputerScience/C/exercices/array/average.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Moyenne des éléments d'un tableau",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'array':2,
+            'pointer':1,
+            'type':5,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'type':2,
+        },
+    },
 
-    # '/ComputerScience/C/exercices/string/count_lower_case.pl':{},
-    # '/ComputerScience/C/exercices/string/count.pl':{},
-    # '/ComputerScience/C/exercices/string/frame_string.pl':{},
-    # '/ComputerScience/C/exercices/string/in.pl':{},
-    # '/ComputerScience/C/exercices/string/is_a_number.pl':{},
-    # '/ComputerScience/C/exercices/string/long_argument.pl':{},
-    # '/ComputerScience/C/exercices/string/strlenght.pl':{},
-    # '/ComputerScience/C/exercices/string/substring.pl':{},
-    # '/ComputerScience/C/exercices/string/to_upper_in_string.pl':{},
+    '/ComputerScience/C/exercices/array/displayarray.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Afficher le contenu d'un tableau",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'array':2,
+            'pointer':1,
+            'input_output':1,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'array':1,
+            'type':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/array/find_index_array.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Trouver l'index d'un élément",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'array':3,
+            'pointer':1,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'array':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/array/init2dtab.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Trouver l'index d'un élément",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'array':5,
+            'pointer':2,
+        },
+        'prerequisites':
+        {
+            'function':4,
+            'array':4,
+            'pointer':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/array/initcarre.pl':
+    {
+        'author':'Dominique Revuz',
+        'title':"Initialisation d'un tableau avec les carrés des entiers",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'array':3,
+            'pointer':1,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'array':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/array/sum_of_positives.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Somme des éléments positifs d'un tableau",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'array':3,
+            'pointer':1,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'array':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/string/strlenght.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"",
+        'subject':'C',
+        'tag':
+        {
+            'function':3,
+            'string':1,
+        },
+        'prerequisites':
+        {
+            'function':1,
+            'array':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/string/count.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Occurences de caractères",
+        'subject':'C',
+        'tag':
+        {
+            'function':4,
+            'string':2,
+            'type':4,
+        },
+        'prerequisites':
+        {
+            'function':2,
+            'array':1,
+            'type':3,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/string/count_lower_case.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Compter les lettres minuscules",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'string':4,
+            'type':5,
+        },
+        'prerequisites':
+        {
+            'function':2,
+            'string':1,
+            'type':3,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/string/frame_string.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Encadrer une chaine de caractères C",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'string':4,
+        },
+        'prerequisites':
+        {
+            'function':2,
+            'string':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/string/substring.pl':
+    {
+        'author':'NB & DR',
+        'title':"Sous-chaîne dans une chaîne",
+        'subject':'C',
+        'tag':
+        {
+            'function':7,
+            'string':5,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'string':3,
+        },
+    },
+
+    
+    '/ComputerScience/C/exercices/string/is_a_number.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Reconnaître un nombre",
+        'subject':'C',
+        'tag':
+        {
+            'function':7,
+            'string':4,
+            'type':5,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'string':2,
+            'type':3,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/string/long_argument.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Trouver le plus long argument d'un programme C",
+        'subject':'C',
+        'tag':
+        {
+            'function':7,
+            'string':4,
+            'array':3,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'string':2,
+            'array':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/string/to_upper_in_string.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Mettre les lettres en majuscule dans une chaîne",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'string':4,
+            'type':5,
+        },
+        'prerequisites':
+        {
+            'function':2,
+            'string':1,
+            'type':3,
+        },
+    },
 
     # '/ComputerScience/C/exercices/structure/allocate_color.pl':{},
     # '/ComputerScience/C/exercices/structure/days.pl':{},
