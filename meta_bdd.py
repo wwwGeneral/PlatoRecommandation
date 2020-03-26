@@ -105,7 +105,6 @@ meta = {
         },
     },
 
-    
     '/ComputerScience/C/exercices/variable/identificateur.pl':
     {
         'author':'Nicolas Borie',
@@ -120,29 +119,325 @@ meta = {
         },        
     },
 
+    '/ComputerScience/C/exercices/variable/left_value.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Left values (conteneur affectable) en C",
+        'subject':'C',
+        'tag':
+        {
+            'variable':3,
+        },
+        'prerequisites':
+        {
+            'variable':1,
+        },
+    },
     
-    # '/ComputerScience/C/exercices/variable/left_value.pl':{},
-    # '/ComputerScience/C/exercices/variable/modelisation.pl':{},
-    # '/ComputerScience/C/exercices/variable/order_size.pl':{},
-    # '/ComputerScience/C/exercices/variable/right_value.pl':{},
+    '/ComputerScience/C/exercices/variable/modelisation.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Variables et modélisation",
+        'subject':'C',
+        'tag':
+        {
+            'variable':5,
+            'structure':2,
+            'type':2,
+        },
+        'prerequisites':
+        {
+            'variable':1,
+            'structure':1,
+            'type':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/variable/order_size.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Taille de quelques variables",
+        'subject':'C',
+        'tag':
+        {
+            'variable':5,
+            'array':1,
+            'type':1,
+        },
+        'prerequisites':
+        {
+            'variable':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/variable/right_value.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Right values (valeur affectable) en C",
+        'subject':'C',
+        'tag':
+        {
+            'variable':3,
+        },
+        'prerequisites':
+        {
+            'variable':1,
+        },
+    },
 
-    # '/ComputerScience/C/exercices/type/corrige_type_1.pl':{},
-    # '/ComputerScience/C/exercices/type/corrige_type_2.pl':{},
-    # '/ComputerScience/C/exercices/type/corrige_type_3.pl':{},
-    # '/ComputerScience/C/exercices/type/exact_and_positive.pl':{},
-    # '/ComputerScience/C/exercices/type/minuscule_ascii.pl':{},
-    # '/ComputerScience/C/exercices/type/sizeof_int_types.pl':{},
+    '/ComputerScience/C/exercices/type/corrige_type_1.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Programme manipulant des types",
+        'subject':'C',
+        'tag':
+        {
+            'variable':3,
+            'type':3,
+        },
+        'prerequisites':
+        {
+            'variable':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/type/corrige_type_2.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Programme manipulant des types",
+        'subject':'C',
+        'tag':
+        {
+            'variable':3,
+            'type':3,
+        },
+        'prerequisites':
+        {
+            'variable':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/type/corrige_type_3.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Programme manipulant des types",
+        'subject':'C',
+        'tag':
+        {
+            'variable':2,
+            'type':4,
+        },
+        'prerequisites':
+        {
+            'variable':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/type/exact_and_positive.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Caractéristiques des types de bases C",
+        'subject':'C',
+        'tag':
+        {
+            'type':1,
+        },
+        'prerequisites':
+        {
+        },
+    },
 
-    # '/ComputerScience/C/exercices/function/cube_it.pl':{},
-    # '/ComputerScience/C/exercices/function/dynamic_polynomial.pl':{},
-    # '/ComputerScience/C/exercices/function/has_vowel.pl':{},
-    # '/ComputerScience/C/exercices/function/increment_it.pl':{},
-    # '/ComputerScience/C/exercices/function/loop_triangle.pl':{},
-    # '/ComputerScience/C/exercices/function/max_of_three.pl':{},
-    # '/ComputerScience/C/exercices/function/mean_of_three.pl':{},
-    # '/ComputerScience/C/exercices/function/min_of_three.pl':{},
-    # '/ComputerScience/C/exercices/function/prototypes.pl':{},
-    # '/ComputerScience/C/exercices/function/puissance.pl':{},
+    '/ComputerScience/C/exercices/type/minuscule_ascii.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Caractères minuscules ASCII",
+        'subject':'C',
+        'tag':
+        {
+            'type':2,
+            'variable':2,
+            'programm':2,
+            'input_output':1,
+        },
+        'prerequisites':
+        {
+            'type':1,
+            'variable':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/type/sizeof_int_types.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Tailles de quelques types entiers",
+        'subject':'C',
+        'tag':
+        {
+            'type':2,
+        },
+        'prerequisites':
+        {
+        },
+    },
+
+    '/ComputerScience/C/exercices/function/cube_it.pl':
+    {
+        'author':'Dominique Revuz',
+        'title':"Mettre au cube une valeur pointée",
+        'subject':'C',
+        'tag':
+        {
+            'type':4,
+            'pointer':1,
+            'function':2,
+        },
+        'prerequisites':
+        {
+            'type':2,
+            'function':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/function/dynamic_polynomial.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Écrire une fonction qui calcule un polynome",
+        'subject':'C',
+        'tag':
+        {
+            'type':2,
+            'function':2,
+        },
+        'prerequisites':
+        {
+            'type':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/function/has_vowel.pl':
+    {
+        'author':'NB & DR',
+        'title':"Trouver la première voyelle",
+        'subject':'C',
+        'tag':
+        {
+            'type':3,
+            'string':3,
+            'function':3,
+        },
+        'prerequisites':
+        {
+            'type':2,
+            'string':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/function/increment_it.pl':
+    {
+        'author':'Dominique Revuz',
+        'title':"Incremente le",
+        'subject':'C',
+        'tag':
+        {
+            'type':4,
+            'pointer':2,
+            'function':2,
+        },
+        'prerequisites':
+        {
+            'type':2,
+            'function':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/function/loop_triangle.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Un triangle avec des caractères ascii",
+        'subject':'C',
+        'tag':
+        {
+            'function':3,
+            'input_output':1,
+        },
+        'prerequisites':
+        {
+            'function':1,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/function/max_of_three.pl':
+    {
+        'author':'NB & DR',
+        'title':"Maximum de trois entiers",
+        'subject':'C',
+        'tag':
+        {
+            'function':1,
+        },
+        'prerequisites':
+        {
+        },
+    },
+    
+    '/ComputerScience/C/exercices/function/mean_of_three.pl':
+    {
+        'author':'NB & DR',
+        'title':"La moyenne de trois entiers",
+        'subject':'C',
+        'tag':
+        {
+            'function':1,
+        },
+        'prerequisites':
+        {
+        },
+    },
+    
+    '/ComputerScience/C/exercices/function/min_of_three.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Minimum de trois entiers",
+        'subject':'C',
+        'tag':
+        {
+            'function':1,
+        },
+        'prerequisites':
+        {
+        },
+    },
+    
+    '/ComputerScience/C/exercices/function/prototypes.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Quel prototype pour quelle fonctionnalité ?",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'pointer':1,
+        },
+        'prerequisites':
+        {
+            'function':3,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/function/puissance.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Écrire une fonction qui calcule la puissance d'un nombre",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+        },
+        'prerequisites':
+        {
+            'function':3,
+        },
+    },
 
     # '/ComputerScience/C/exercices/array/apply_square.pl':{},
     # '/ComputerScience/C/exercices/array/average.pl':{},
