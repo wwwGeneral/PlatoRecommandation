@@ -86,14 +86,15 @@ def next_exercice(dico,student,mode,subject,tag):
                             return tag
 
     elif (mode == Mode.remise):
+        print("Bonjour")
         #Récupère le tag rentré, récupère le niveau de l'élève dans ce tag, puis cherche dans la bdd les exercices possédant ce tag et ce niveau de difficulté.
         matiere = s.profil.keys()
         for m in matiere:
             if (subject == m):
                 for exercice in dico_meta.keys():
-                    exoSubject = dico_meta[key]["subject"]
-                    exoTag = dico_meta[key]["tag"]
-                    exoPrerequisite = dico_meta[key]["prerequisites"]
+                    exoSubject = dico_meta[exercice]["subject"]
+                    exoTag = dico_meta[exercice]["tag"]
+                    exoPrerequisite = dico_meta[exercice]["prerequisites"]
                     if (exoSubject == subject):
                         for prequisite in exoPrerequisite.items():
                             for skill in s.profil[subject]["skills"]:
@@ -106,7 +107,7 @@ def next_exercice(dico,student,mode,subject,tag):
                                 if (t[0] == tag):
                                     for skill in s.profil[subject]["skills"][tag]:
                                         if (skill[1] <= t[1]-1 and skill[1] > t[1] + 2):
-                                            return exercice
+                                            return (exoTag,exercice)
                                         else:
                                             print("Votre niveau est trop élevé ou trop bas")
                                             break
@@ -132,10 +133,10 @@ if __name__ == '__main__':
     skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':1,'function':1, 'variable':1}}})
 
     students = list()
-    students.append(Student("Jean",30,75,0,skills[2],[]))
-    students.append(Student("Pierre",50,100,1,skills[0],[]))
-    students.append(Student("Albert",50,100,0.5,skills[1],[]))
-    students.append(Student("Marcel",80,100,0.3,skills[3],[]))
+    #students.append(Student("Jean",30,75,0,skills[2],[]))
+    #students.append(Student("Pierre",50,100,1,skills[0],[]))
+    students.append(Student("Albert",50,100,0,skills[1],[]))
+    #students.append(Student("Marcel",80,100,0.3,skills[3],[]))
 
     dico_meta = meta_bdd.meta
 
