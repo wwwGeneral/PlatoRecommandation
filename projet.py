@@ -35,6 +35,10 @@ def notion(subject):
                 1:'array',
                 2:'string',
                 3:'function',
+                4:'variable',
+                5:'type',
+                6:'input_output',
+                7:'pointer'
             }
         elif(subject == "JAVA"):   
             switcher={
@@ -42,6 +46,9 @@ def notion(subject):
                 1:'array',
                 2:'string',
                 3:'function',
+                4:'variable',
+                5:'type',
+                6:'input_output'
             }
 
         elif(subject == "Python"): 
@@ -50,6 +57,8 @@ def notion(subject):
                 1:'array',
                 2:'string',
                 3:'function',
+                4:'variable',
+                5:'input_output'
             }
         a = switcher.get(i,False)
         if(a == False):
