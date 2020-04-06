@@ -2,6 +2,7 @@ import random
 import meta_bdd
 from Student import *
 from mode import Mode
+from Meta_donnee import Meta_donnee
     
 def subject():
     subjects = ['C', 'JAVA', 'Python']
@@ -69,13 +70,9 @@ def notion(subject):
             continue
         else:
             return a
-def next_exercice(dico,student,mode,subject,tag):
+def next_exercice(meta,dico,student,mode,subject,tag):
     if (mode == Mode.decouverte):
-        for key in dico_meta.keys():
-            tag = dico_meta[key]['tag']
-            for tag_value in tag.items():
-                if (tag_value==('program',1)):
-                    return tag
+        return meta.tag(tag,student)
     elif (mode == Mode.revision):
         for key in dico_meta.keys():
             if (dico_meta[key]['subject'] == subject):
@@ -126,6 +123,8 @@ def next_exercice(dico,student,mode,subject,tag):
     #Gros algorithme permettant de recommander un exercice 
 
 if __name__ == '__main__':
+    meta = Meta_donnee(list())
+    meta.initialise_meta()
     skills = list()
     skills.append({'C': { 'skills': {'program':1, 'function':1}}})
     skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':4}}})
@@ -141,7 +140,7 @@ if __name__ == '__main__':
     dico_meta = meta_bdd.meta
 
     for s in students:
-        tag =''
+        tag ={'variable':3}
         print("=====================================================================================")
         print("Session de : "+s.name)
         mode = Mode[input('Choissisez un des modes disponibles : ')]
@@ -151,7 +150,7 @@ if __name__ == '__main__':
         nb_exo = 20
         while(nb_exo != 0):
             nb_exo-=1
-            exo = next_exercice(dico_meta,s,mode,subjectChoose,tag)
+            exo = next_exercice(meta,dico_meta,s,mode,subjectChoose,tag)
             mark = s.genMark()
             refus = s.refuse()
             if refus:
@@ -160,3 +159,4 @@ if __name__ == '__main__':
             s.updateProfil(subjectChoose,exo[0],mark,exo[1])
             print("Exercice "+str(20-nb_exo))
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
+            meta.updatetag(tag,mark)

@@ -1,5 +1,6 @@
 import meta_bdd
 from Exercice import *
+from random import random,randint
 
 class Meta_donnee:
 	def __init__(self,liste):
@@ -16,7 +17,21 @@ class Meta_donnee:
 	
 	def getMeta(self):
 		return self.liste
+
 	def tag(self,tag,student):
 		for exo in self.liste:
-			if tag == exo.getTag() and exo.hasPrequesites(student):
-				return exo.getTag()
+			if exo.similarTag(tag) and exo.hasPrequesites(student):
+				return (exo.getTag(),exo.getPath())
+	
+	def updatetag(self,tag,mark):
+		if mark >= 70:
+			for matiere in tag.keys():
+				tag[matiere]+=1
+		elif mark < 50:
+			for matiere in tag.keys():
+				tag[matiere]-=1
+		return tag
+	
+	def testTag(self,tag):
+		for exo in self.liste:
+			print(exo.similarTag(tag))

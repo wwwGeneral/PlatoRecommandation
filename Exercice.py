@@ -25,6 +25,12 @@ class Exercice:
 		
 	def getSubject(self):
 		return self.subject
+
+	def similarTag(self,tags):
+		for tag in tags.items():
+			if tag[0] not in self.tag or (tag[0] in self.tag and self.tag[tag[0]] > tag[1]):
+				return False
+		return True
 	
 	def hasPrequesites(self,student):
 		profil = student.profil
