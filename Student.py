@@ -2,14 +2,15 @@
 class Student:
     """Classe définissant un étudiant"""
 
-    def __init__(self, name, markMin, markMax, pRefus, profil):
+    def __init__(self, name, markMin, markMax, pRefus, profil, hist):
         self.name = name
         self.markMin = markMin
         self.markMax = markMax
         self.pRefus = pRefus
         self.profil = profil
+        self.hist = hist
 
-    def updateProfil(self, subject, skills, mark):
+    def updateProfil(self, subject, skills, mark, name):
         """Permet de mettre à jour le profil de l'étudiant avec ses nouvelles compétences"""
         print(skills)
         for a in skills.items():
@@ -29,6 +30,7 @@ class Student:
                             self.profil[subject]['skills'][a[0]] = self.profil[subject]['skills'][a[0]]
                     else:
                         self.profil[subject]['skills'][a[0]] = 10
+                self.hist.append(name)
             elif(mark < 50):
                 if(self.profil.get((a[0])) and a[1]<=self.profil[subject]['skills'][a[0]]):
                     self.profil[subject]['skills'][a[0]] = (self.profil[subject]['skills'][a[0]]*3 + a[1]*(mark/100))/4

@@ -132,10 +132,10 @@ if __name__ == '__main__':
     skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':1,'function':1, 'variable':1}}})
 
     students = list()
-    students.append(Student("Jean",30,75,0,skills[2]))
-    students.append(Student("Pierre",50,100,1,skills[0]))
-    students.append(Student("Albert",50,100,0.5,skills[1]))
-    students.append(Student("Marcel",80,100,0.3,skills[3]))
+    students.append(Student("Jean",30,75,0,skills[2],[]))
+    students.append(Student("Pierre",50,100,1,skills[0],[]))
+    students.append(Student("Albert",50,100,0.5,skills[1],[]))
+    students.append(Student("Marcel",80,100,0.3,skills[3],[]))
 
     dico_meta = meta_bdd.meta
 
@@ -156,6 +156,6 @@ if __name__ == '__main__':
             if refus:
                 print("refusé")
                 continue
-            s.updateProfil(subjectChoose,exo,mark)
+            s.updateProfil(subjectChoose,exo[0],mark,exo[1])
             print("Exercice "+str(20-nb_exo))
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
