@@ -3,6 +3,14 @@ class Student:
     """Classe définissant un étudiant"""
 
     def __init__(self, name, markMin, markMax, pRefus, profil, hist):
+        """
+        name : nom de l'étudiant
+        markMin : note minimal qu'il peux avoir ( de 0 à 100 avec markMin <= markMax )
+        markMax : note maximal qu'il peux avoir ( de 0 à 100 avec markMin <= markMax )
+        pRefus : probabilité de refus ( nombre entre 0 et 1 )
+        profil : dictionnaire contenant les capacités de l'étudiant dans chaque matière pour chaque notion de la matière
+        hist : liste des noms des exercices réussi faisant office d'historique 
+        """
         self.name = name
         self.markMin = markMin
         self.markMax = markMax
@@ -11,7 +19,12 @@ class Student:
         self.hist = hist
 
     def updateProfil(self, subject, skills, mark, name):
-        """Permet de mettre à jour le profil de l'étudiant avec ses nouvelles compétences"""
+        """Permet de mettre à jour le profil de l'étudiant avec ses nouvelles compétences
+        subject : nom de la matière
+        skills : ensemble des notions de l'exercice avec leur niveau de difficulté
+        mark : note eu a l'exercice
+        name : nom de l'exercice
+        """
         print(skills)
         for a in skills.items():
             if(mark >= 70):
