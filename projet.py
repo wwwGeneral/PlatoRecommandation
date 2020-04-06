@@ -23,7 +23,11 @@ def subject():
             return a
 
 def notion(subject):
-    notions = {'C': ['program', 'array', 'string', 'function'], 'Python': ['program', 'array', 'string', 'function'], 'JAVA': ['program', 'array', 'string', 'function']}
+    notions = {
+        'C': ['program', 'array', 'string', 'function','variable','type','input_output','pointer'], 
+        'Python': ['program', 'array', 'string', 'function','variable','input_output'], 
+        'JAVA': ['program', 'array', 'string', 'function','type','input_output']
+    }
     while(True):
         print("Listes des notions : ")
         for e in notions[subject]:
@@ -50,7 +54,6 @@ def notion(subject):
                 5:'type',
                 6:'input_output'
             }
-
         elif(subject == "Python"): 
             switcher={
                 0:'program',
