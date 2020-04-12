@@ -714,32 +714,378 @@ meta = {
             'type':3,
         },
     },
+    
+        '/ComputerScience/C/exercices/structure/point2d.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Structure pour points entiers en dimension 2",
+        'subject':'C',
+        'tag':
+        {
+            'structure':2,
+        },
+        'prerequisites':
+        {
+            'type':2,
+            'variable':2,
+        },
+    },
 
-    # '/ComputerScience/C/exercices/structure/allocate_color.pl':{},
-    # '/ComputerScience/C/exercices/structure/days.pl':{},
-    # '/ComputerScience/C/exercices/structure/enumValeurPrecise.pl':{},
-    # '/ComputerScience/C/exercices/structure/people.pl':{},
-    # '/ComputerScience/C/exercices/structure/plateau.pl':{},
-    # '/ComputerScience/C/exercices/structure/point2d.pl':{},
-    # '/ComputerScience/C/exercices/structure/scalar_product.pl':{},
-    # '/ComputerScience/C/exercices/structure/structureDansStructure.pl':{},
-    # '/ComputerScience/C/exercices/structure/tableau_structure.pl':{},
-    # '/ComputerScience/C/exercices/structure/tableauStructure.pl':{},
+    '/ComputerScience/C/exercices/structure/people.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Structure C pour une personne",
+        'subject':'C',
+        'tag':
+        {
+            'structure':3,
+        },
+        'prerequisites':
+        {
+            'type':4,
+            'variable':2,
+        },
+    },
 
-    # '/ComputerScience/C/exercices/macro/date.pl':{},
-    # '/ComputerScience/C/exercices/macro/expr_eval.pl':{},
-    # '/ComputerScience/C/exercices/macro/graphic_constants.pl':{},
-    # '/ComputerScience/C/exercices/macro/macro_min.pl':{},
-    # '/ComputerScience/C/exercices/macro/secure_macro.pl':{},
-    # '/ComputerScience/C/exercices/macro/square.pl':{},
+    '/ComputerScience/C/exercices/structure/plateau.pl':
+    {
+        'author':'Elise Hardy',
+        'title':"Structure C pour un plateau rectangulaire",
+        'subject':'C',
+        'tag':
+        {
+            'structure':4,
+        },
+        'prerequisites':
+        {
+            'type':4,
+            'variable':2,
+        },
+    },
 
-    # '/ComputerScience/C/exercices/input_output/ints_on_stdin.pl':{},
-    # '/ComputerScience/C/exercices/input_output/nb_char_stdin.pl':{},
-    # '/ComputerScience/C/exercices/input_output/person.pl':{},
-    # '/ComputerScience/C/exercices/input_output/prod_args_float.pl':{},
-    # '/ComputerScience/C/exercices/input_output/sentence_stdin.pl':{},
-    # '/ComputerScience/C/exercices/input_output/sort_words.pl':{},
-    # '/ComputerScience/C/exercices/input_output/sum_int_stdin.pl':{},
+    '/ComputerScience/C/exercices/structure/scalar_product.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Produit scalaire de vecteurs en dimension 3",
+        'subject':'C',
+        'tag':
+        {
+            'structure':3,
+        },
+        'prerequisites':
+        {
+            'function':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/structure/days.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Structure C pour les jours de la semaine",
+        'subject':'C',
+        'tag':
+        {
+            'structure':4,
+        },
+        'prerequisites':
+        {
+            'structure':1,
+            'type':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/structure/enumValeurPrecise.pl':
+    {
+        'author':'Elise Hardy',
+        'title':"Énumeration avec des valeurs précises",
+        'subject':'C',
+        'tag':
+        {
+            'structure':5,
+        },
+        'prerequisites':
+        {
+            'structure':3,
+            'type':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/structure/allocate_color.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Allocation d'une structure Couleur avec 3 entiers",
+        'subject':'C',
+        'tag':
+        {
+            'structure':5,
+            'allocation':3,
+        },
+        'prerequisites':
+        {
+            'function': 3,
+            'structure':2,
+            'allocation':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/structure/structureDansStructure.pl':
+    {
+        'author':'Elise Hardy',
+        'title':"Structure contenant une autre structure",
+        'subject':'C',
+        'tag':
+        {
+            'structure':5,
+        },
+        'prerequisites':
+        {
+            'structure':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/structure/tableau_structure.pl':
+    {
+        'author':'Elise Hardy',
+        'title':"Tableau de structure",
+        'subject':'C',
+        'tag':
+        {
+            'structure':6,
+        },
+        'prerequisites':
+        {
+            'structure':4,
+        },
+    },
+
+
+    '/ComputerScience/C/exercices/macro/date.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Fonction qui affiche la date de compilation",
+        'subject':'C',
+        'tag':
+        {
+            'function':4,
+            'macro':2,
+        },
+        'prerequisites':
+        {
+            'function':4,
+        },
+    },
+
+    '/ComputerScience/C/exercices/macro/graphic_constants.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Déclaration de constantes pour une interface graphique",
+        'subject':'C',
+        'tag':
+        {
+            'macro':1,
+        },
+        'prerequisites':
+        {
+        },
+    },
+
+    '/ComputerScience/C/exercices/macro/square.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Macro pour calculer un carré",
+        'subject':'C',
+        'tag':
+        {
+            'macro':4,
+        },
+        'prerequisites':
+        {
+            'macro':1,
+            'function':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/macro/secure_macro.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Macro de sécurisation",
+        'subject':'C',
+        'tag':
+        {
+            'macro':4,
+        },
+        'prerequisites':
+        {
+            'macro':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/macro/macro_min.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Macro minimum",
+        'subject':'C',
+        'tag':
+        {
+            'macro':5,
+        },
+        'prerequisites':
+        {
+            'macro':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/macro/expr_eval.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Macro chaîne depuis argument",
+        'subject':'C',
+        'tag':
+        {
+            'macro':6,
+        },
+        'prerequisites':
+        {
+            'macro':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/input_output/sum_int_stdin.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Somme de deux entiers données au clavier",
+        'subject':'C',
+        'tag':
+        {
+            'type':3,
+            'variable':3,
+            'programm':3,
+            'input_output':2,
+        },
+        'prerequisites':
+        {
+            'type':2,
+            'variable':2,
+            'programm':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/input_output/sentence_stdin.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Récupérer puis écrire une ligne complète",
+        'subject':'C',
+        'tag':
+        {
+            'array':2,
+            'variable':3,
+            'programm':3,
+            'input_output':4,
+        },
+        'prerequisites':
+        {
+            'array':1,
+            'variable':2,
+            'function':1,
+            'programm':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/input_output/person.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Données entrées au clavier pour décrire une personne",
+        'subject':'C',
+        'tag':
+        {
+            'type':4,
+            'variable':4,
+            'programm':3,
+            'input_output':4,
+        },
+        'prerequisites':
+        {
+            'type':2,
+            'variable':2,
+            'programm':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/input_output/prod_args_float.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Produit d'arguments floattants d'un programme",
+        'subject':'C',
+        'tag':
+        {
+            'variable':4,
+            'programm':5,
+            'input_output':3,
+        },
+        'prerequisites':
+        {
+            'type':2,
+            'variable':2,
+            'programm':4,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/input_output/ints_on_stdin.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Entiers sur l'entrée standard",
+        'subject':'C',
+        'tag':
+        {
+            'programm':4,
+            'input_output':5,
+        },
+        'prerequisites':
+        {
+            'function':5,
+            'programm':2,
+            'input_output':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/input_output/nb_char_stdin.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Compter les caractères présents sur l'entrée standard",
+        'subject':'C',
+        'tag':
+        {
+            'programm':4,
+            'input_output':5,
+        },
+        'prerequisites':
+        {
+            'function':3,
+            'programm':2,
+            'input_output':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/input_output/sort_words.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Trier des mots lus sur l'entrée standard",
+        'subject':'C',
+        'tag':
+        {
+            'array':5,
+            'function':7,
+            'programm':4,
+            'input_output':7,
+        },
+        'prerequisites':
+        {
+            'array':3,
+            'function':4,
+            'programm':2,
+            'input_output':4,
+        },
+    },
 
     # '/ComputerScience/C/exercices/recursion/ackermann.pl':{},
     # '/ComputerScience/C/exercices/recursion/area_matrix.pl':{},
