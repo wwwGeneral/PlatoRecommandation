@@ -1087,37 +1087,515 @@ meta = {
         },
     },
 
-    # '/ComputerScience/C/exercices/recursion/ackermann.pl':{},
-    # '/ComputerScience/C/exercices/recursion/area_matrix.pl':{},
-    # '/ComputerScience/C/exercices/recursion/count_recurvive.pl':{},
-    # '/ComputerScience/C/exercices/recursion/div_by_seven.pl':{},
-    # '/ComputerScience/C/exercices/recursion/down_up_number.pl':{},
-    # '/ComputerScience/C/exercices/recursion/exp_by_squaring.pl':{},
-    # '/ComputerScience/C/exercices/recursion/factorial.pl':{},
-    # '/ComputerScience/C/exercices/recursion/fibonacci_rec.pl':{},
-    # '/ComputerScience/C/exercices/recursion/knapsack.pl':{},
-    # '/ComputerScience/C/exercices/recursion/pascal_rec.pl':{},
-    # '/ComputerScience/C/exercices/recursion/pgcd_soustrac.pl':{},
-    # '/ComputerScience/C/exercices/recursion/pied_nickeles_sort.pl':{},
-    # '/ComputerScience/C/exercices/recursion/sum_number.pl':{},
+    '/ComputerScience/C/exercices/recursion/factorial.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Factorielle d'un entier positif",
+        'subject':'C',
+        'tag':
+        {
+            'function':3,
+            'recursion':1,
+        },
+        'prerequisites':
+        {
+            'function':2,
+        },
+    },
 
-    # '/ComputerScience/C/exercices/malloc/array_of_string.pl':{},
-    # '/ComputerScience/C/exercices/malloc/first_last_name.pl':{},
-    # '/ComputerScience/C/exercices/malloc/linked_double.pl':{},
-    # '/ComputerScience/C/exercices/malloc/linked_word.pl':{},
-    # '/ComputerScience/C/exercices/malloc/nb_malloc.pl':{},
-    # '/ComputerScience/C/exercices/malloc/rules_with_malloc.pl':{},
-    # '/ComputerScience/C/exercices/malloc/square_matrix_int.pl':{},
-    # '/ComputerScience/C/exercices/malloc/tab1d.pl':{},
-    # '/ComputerScience/C/exercices/malloc/when_use_malloc.pl':{},
+    '/ComputerScience/C/exercices/recursion/fibonacci_rec.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Fibonacci récursif très naïf",
+        'subject':'C',
+        'tag':
+        {
+            'function':3,
+            'recursion':1,
+        },
+        'prerequisites':
+        {
+            'function':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/recursion/ackermann.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Fonction d'Ackermann",
+        'subject':'C',
+        'tag':
+        {
+            'function':3,
+            'recursion':2,
+        },
+        'prerequisites':
+        {
+            'function':2,
+        },
+    },
 
-    # '/ComputerScience/C/exercices/bitwise/binary_factor.pl':{},
-    # '/ComputerScience/C/exercices/bitwise/last_pack_size.pl':{},
-    # '/ComputerScience/C/exercices/bitwise/max_consecutive.pl':{},
-    # '/ComputerScience/C/exercices/bitwise/miror_area.pl':{},
-    # '/ComputerScience/C/exercices/bitwise/miror_bit.pl':{},
-    # '/ComputerScience/C/exercices/bitwise/nb_swap_long.pl':{},
-    # '/ComputerScience/C/exercices/bitwise/popcount.pl':{},
+    '/ComputerScience/C/exercices/recursion/pascal_rec.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Coefficients binomiaux en récursif",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'recursion':2,
+        },
+        'prerequisites':
+        {
+            'function':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/recursion/sum_number.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Somme des chiffres d'un nombre",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'recursion':3,
+        },
+        'prerequisites':
+        {
+            'function':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/recursion/div_by_seven.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Divisibilité par 7",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'recursion':3,
+        },
+        'prerequisites':
+        {
+            'function':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/recursion/down_up_number.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Égrener des nombres récursivements",
+        'subject':'C',
+        'tag':
+        {
+            'function':4,
+            'recursion':4,
+        },
+        'prerequisites':
+        {
+            'function':2,
+            'recursion':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/recursion/exp_by_squaring.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Exponentiation rapide en récursif",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'recursion':3,
+        },
+        'prerequisites':
+        {
+            'function':2,
+            'recursion':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/recursion/pgcd_soustrac.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"PGCD avec soustractions",
+        'subject':'C',
+        'tag':
+        {
+            'function':4,
+            'recursion':3,
+        },
+        'prerequisites':
+        {
+            'function':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/recursion/area_matrix.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Zone contiguë dans une matrice",
+        'subject':'C',
+        'tag':
+        {
+            'array':5,
+            'function':7,
+            'recursion':6,
+        },
+        'prerequisites':
+        {
+            'array':4,
+            'function':4,
+            'recursion':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/recursion/knapsack.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Problème du sac à dos",
+        'subject':'C',
+        'tag':
+        {
+            'array':5,
+            'function':7,
+            'recursion':6,
+        },
+        'prerequisites':
+        {
+            'array':3,
+            'function':4,
+            'recursion':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/recursion/pied_nickeles_sort.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Tri des pieds nickelés",
+        'subject':'C',
+        'tag':
+        {
+            'array':3,
+            'function':8,
+            'recursion':7,
+        },
+        'prerequisites':
+        {
+            'array':1,
+            'function':4,
+            'recursion':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/tab1d.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Allocation d'un tableau à une dimension",
+        'subject':'C',
+        'tag':
+        {
+            'allocation':2,
+        },
+        'prerequisites':
+        {
+            'array':1,
+            'function':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/nb_malloc.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Stratégie d'allocation",
+        'subject':'C',
+        'tag':
+        {
+            'allocation':4,
+        },
+        'prerequisites':
+        {
+            'allocation':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/rules_with_malloc.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Règles de bonne utilisation de malloc",
+        'subject':'C',
+        'tag':
+        {
+            'allocation':1,
+        },
+        'prerequisites':
+        {
+
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/when_use_malloc.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Bonnes utilisations de malloc",
+        'subject':'C',
+        'tag':
+        {
+            'allocation':1,
+        },
+        'prerequisites':
+        {
+
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/first_last_name.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Deux chaînes à allouer et recopier dans une structure",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'string':5,
+            'allocation':4,
+        },
+        'prerequisites':
+        {
+            'function':4,
+            'string':4,
+            'structure':2,
+            'allocation':1,
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/linked_double.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Cellule pour liste de double",
+        'subject':'C',
+        'tag':
+        {
+            'function':3,
+            'allocation':2,
+            'pointer':3,
+        },
+        'prerequisites':
+        {
+            'function':2,
+            'structure':2,
+            'type':3,
+            'pointer':2,
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/linked_word.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Cellule pour contenir un mot",
+        'subject':'C',
+        'tag':
+        {
+            'function':5,
+            'allocation':5,
+            'pointer':4,
+            'string':5,
+        },
+        'prerequisites':
+        {
+            'function':4,
+            'pointer':3,
+            'string':4,
+            'structure':3,
+            'allocation':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/square_matrix_int.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Matrice carrée d'entiers",
+        'subject':'C',
+        'tag':
+        {
+            'array':6,
+            'function':5,
+            'allocation':6,
+            'pointer':5,
+        },
+        'prerequisites':
+        {
+            'array':5,
+            'function':4,
+            'pointer':4,
+            'allocation':4,
+        },
+    },
+
+    '/ComputerScience/C/exercices/malloc/array_of_string.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Tableau de chaînes de caractères",
+        'subject':'C',
+        'tag':
+        {
+            'array':6,
+            'function':6,
+            'allocation':6,
+            'pointer':5,
+            'string':6,
+            'input_output':4,
+        },
+        'prerequisites':
+        {
+            'array':5,
+            'function':5,
+            'pointer':4,
+            'allocation':4,
+            'string':4,
+            'input_output':3,
+        },
+    },
+
+    '/ComputerScience/C/exercices/bitwise/popcount.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Popcount : compter les bit à 1",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'pointer':5,
+            'bitwise':2,
+        },
+        'prerequisites':
+        {
+            'function':4,
+            'pointer':4,
+            'type':4,
+        },
+    },
+
+    '/ComputerScience/C/exercices/bitwise/miror_bit.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Miroir sur les bits d'un octet",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'bitwise':2,
+        },
+        'prerequisites':
+        {
+            'function':4,
+            'type':4,
+        },
+    },
+
+    '/ComputerScience/C/exercices/bitwise/last_pack_size.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Taille du paquet de bits de poids faible",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'bitwise':2,
+        },
+        'prerequisites':
+        {
+            'function':4,
+            'type':4,
+        },
+    },
+
+    '/ComputerScience/C/exercices/bitwise/nb_swap_long.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Alternances de bits dans un entier long",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'bitwise':4,
+            'type':6,
+        },
+        'prerequisites':
+        {
+            'function':5,
+            'type':5,
+            'bitwise':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/bitwise/binary_factor.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Sous facteur binaire dans un entier long",
+        'subject':'C',
+        'tag':
+        {
+            'function':6,
+            'bitwise':5,
+            'type':6,
+        },
+        'prerequisites':
+        {
+            'function':5,
+            'type':5,
+            'bitwise':2,
+        },
+    },
+    
+    '/ComputerScience/C/exercices/bitwise/max_consecutive.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Taille du plus grand paquet de bits consécutifs égaux",
+        'subject':'C',
+        'tag':
+        {
+            'array':5,
+            'pointer':5,
+            'function':6,
+            'bitwise':5,
+            'type':6,
+        },
+        'prerequisites':
+        {
+            'array':4,
+            'pointer':4,
+            'function':5,
+            'type':5,
+            'bitwise':3,
+        },        
+    },
+
+    
+    '/ComputerScience/C/exercices/bitwise/miror_area.pl':
+    {
+        'author':'Nicolas Borie',
+        'title':"Miroir binaire sur zone mémoire",
+        'subject':'C',
+        'tag':
+        {
+            'array':5,
+            'pointer':5,
+            'function':8,
+            'bitwise':6,
+            'type':6,
+        },
+        'prerequisites':
+        {
+            'array':4,
+            'pointer':4,
+            'function':5,
+            'type':5,
+            'bitwise':3,
+        },        
+    },
 
 }
 
