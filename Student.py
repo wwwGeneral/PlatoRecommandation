@@ -43,7 +43,7 @@ class Student:
                             self.profil[subject]['skills'][a[0]] = self.profil[subject]['skills'][a[0]]
                     else:
                         self.profil[subject]['skills'][a[0]] = 10
-                self.hist.append(name)
+                self.hist[name] = skills
             elif(mark < 50):
                 if(self.profil.get((a[0])) and a[1]<=self.profil[subject]['skills'][a[0]]):
                     self.profil[subject]['skills'][a[0]] = (self.profil[subject]['skills'][a[0]]*3 + a[1]*(mark/100))/4

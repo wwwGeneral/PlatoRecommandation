@@ -20,7 +20,7 @@ class Meta_donnee:
 
 	def tag(self,tag,student):
 		for exo in self.liste:
-			if exo.similarTag(tag) and exo.hasPrequesites(student):
+			if exo.similarTag(tag) and exo.hasPrequesites(student) and exo.getPath() not in student.hist:
 				return (exo.getTag(),exo.getPath())
 	
 	def updatetag(self,tag,mark):
