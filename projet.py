@@ -25,7 +25,7 @@ def subject():
 
 def notion(subject):
     notions = {
-        'C': ['program', 'array', 'string', 'function','variable','type','input_output','pointer'], 
+        'C': ['program', 'array', 'string', 'function','variable','type','input_output','pointer','allocation','macro','recursion'], 
         'Python': ['program', 'array', 'string', 'function','variable','input_output'], 
         'JAVA': ['program', 'array', 'string', 'function','type','input_output']
     }
@@ -36,39 +36,43 @@ def notion(subject):
         i = int(input("Votre choix : "))
         if(subject == "C"):
             switcher={
-                0:'program',
-                1:'array',
-                2:'string',
-                3:'function',
-                4:'variable',
-                5:'type',
-                6:'input_output',
-                7:'pointer'
+                0:notions[subject][0],
+                1:notions[subject][1],
+                2:notions[subject][2],
+                3:notions[subject][3],
+                4:notions[subject][4],
+                5:notions[subject][5],
+                6:notions[subject][6],
+                7:notions[subject][7],
+                8:notions[subject][8],
+                9:notions[subject][9],
+                10:notions[subject][10]
             }
         elif(subject == "JAVA"):   
             switcher={
-                0:'program',
-                1:'array',
-                2:'string',
-                3:'function',
-                4:'variable',
-                5:'type',
-                6:'input_output'
+                0:notions[subject][0],
+                1:notions[subject][1],
+                2:notions[subject][2],
+                3:notions[subject][3],
+                4:notions[subject][4],
+                5:notions[subject][5],
+                6:notions[subject][6]
             }
         elif(subject == "Python"): 
             switcher={
-                0:'program',
-                1:'array',
-                2:'string',
-                3:'function',
-                4:'variable',
-                5:'input_output'
+                0:notions[subject][0],
+                1:notions[subject][1],
+                2:notions[subject][2],
+                3:notions[subject][3],
+                4:notions[subject][4],
+                5:notions[subject][5]
             }
         a = switcher.get(i,False)
         if(a == False):
             print("Notion invalide")
             continue
         else:
+            print(a)
             return a
 def next_exercice(meta,dico,student,mode,subject,tag):
     if (mode == Mode.decouverte):
