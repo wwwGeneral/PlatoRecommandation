@@ -25,7 +25,7 @@ def subject():
 
 def notion(subject):
     notions = {
-        'C': ['program', 'array', 'string', 'function','variable','type','input_output','pointer','allocation','macro','recursion'], 
+        'C': ['program', 'array', 'string', 'function','variable','type','input_output','pointer','allocation','macro','recursion','bitwise'], 
         'Python': ['program', 'array', 'string', 'function','variable','input_output'], 
         'JAVA': ['program', 'array', 'string', 'function','type','input_output']
     }
@@ -46,7 +46,8 @@ def notion(subject):
                 7:notions[subject][7],
                 8:notions[subject][8],
                 9:notions[subject][9],
-                10:notions[subject][10]
+                10:notions[subject][10],
+                11:notions[subject][11]
             }
         elif(subject == "JAVA"):   
             switcher={
