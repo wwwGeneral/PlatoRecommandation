@@ -35,3 +35,10 @@ class Meta_donnee:
 	def testTag(self,tag):
 		for exo in self.liste:
 			print(exo.similarTag(tag))
+
+##############################################################################################################
+
+	def tagRev(self,tag,student):
+			for exo in self.liste:
+				if exo.similarTag(tag) and exo.hasPreForRev(student) and exo.getPath() not in student.hist:
+					return (exo.getTag(),exo.getPath())
