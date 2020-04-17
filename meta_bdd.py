@@ -256,7 +256,7 @@ meta = {
         {
             'type':2,
             'variable':2,
-            'programm':2,
+            'program':2,
             'input_output':1,
         },
         'prerequisites':
@@ -959,14 +959,14 @@ meta = {
         {
             'type':3,
             'variable':3,
-            'programm':3,
+            'program':3,
             'input_output':2,
         },
         'prerequisites':
         {
             'type':2,
             'variable':2,
-            'programm':1,
+            'program':1,
         },
     },
 
@@ -979,7 +979,7 @@ meta = {
         {
             'array':2,
             'variable':3,
-            'programm':3,
+            'program':3,
             'input_output':4,
         },
         'prerequisites':
@@ -987,7 +987,7 @@ meta = {
             'array':1,
             'variable':2,
             'function':1,
-            'programm':1,
+            'program':1,
         },
     },
 
@@ -1000,14 +1000,14 @@ meta = {
         {
             'type':4,
             'variable':4,
-            'programm':3,
+            'program':3,
             'input_output':4,
         },
         'prerequisites':
         {
             'type':2,
             'variable':2,
-            'programm':1,
+            'program':1,
         },
     },
 
@@ -1019,14 +1019,14 @@ meta = {
         'tag':
         {
             'variable':4,
-            'programm':5,
+            'program':5,
             'input_output':3,
         },
         'prerequisites':
         {
             'type':2,
             'variable':2,
-            'programm':4,
+            'program':4,
         },
     },
     
@@ -1037,13 +1037,13 @@ meta = {
         'subject':'C',
         'tag':
         {
-            'programm':4,
+            'program':4,
             'input_output':5,
         },
         'prerequisites':
         {
             'function':5,
-            'programm':2,
+            'program':2,
             'input_output':2,
         },
     },
@@ -1055,13 +1055,13 @@ meta = {
         'subject':'C',
         'tag':
         {
-            'programm':4,
+            'program':4,
             'input_output':5,
         },
         'prerequisites':
         {
             'function':3,
-            'programm':2,
+            'program':2,
             'input_output':2,
         },
     },
@@ -1075,14 +1075,14 @@ meta = {
         {
             'array':5,
             'function':7,
-            'programm':4,
+            'program':4,
             'input_output':7,
         },
         'prerequisites':
         {
             'array':3,
             'function':4,
-            'programm':2,
+            'program':2,
             'input_output':4,
         },
     },
@@ -1598,6 +1598,8 @@ meta = {
     },
 
 }
+
+notions = set({'variable', 'function', 'program', 'type'})
 
 
 # s = Create_student(note_min=0, note_max=100, refus_exo=0.3)

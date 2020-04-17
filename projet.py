@@ -77,7 +77,7 @@ def notion(subject):
             return a
 def next_exercice(meta,dico,student,mode,subject,tag):
     if (mode == Mode.decouverte):
-        return meta.tag(tag,student)
+        return meta.tag(tag,student,subject)
     elif (mode == Mode.revision):
         return meta.tagRev(tag,student)
         '''
@@ -154,7 +154,6 @@ if __name__ == '__main__':
     dico_meta = meta_bdd.meta
 
     for s in students:
-        tag ={'variable':3}
         print("=====================================================================================")
         print("Session de : "+s.name)
         mode = Mode[input('Choissisez un des modes disponibles : ')]
@@ -164,6 +163,8 @@ if __name__ == '__main__':
             for k,v in s.profil[subjectChoose]['skills'].items():
                 if (k == m):
                     tag = {m : v}
+        else:
+            tag = {'variable':1}
         nb_exo = 20
         while(nb_exo != 0):
             nb_exo-=1
@@ -173,8 +174,7 @@ if __name__ == '__main__':
             if refus:
                 print("refusé")
                 continue
-            print(exo)
             s.updateProfil(subjectChoose,exo[0],mark,exo[1])
             print("Exercice "+str(20-nb_exo))
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
-            meta.updatetag(tag,mark)
+            meta.updatetag(tag,mark,s,subjectChoose,mode)

@@ -27,10 +27,13 @@ class Exercice:
 		return self.subject
 
 	def similarTag(self,tags):
+		#self.tag est le tag de l'exercice
+		#tag est le tag qui s'adapte par rapport au mode
 		for tag in tags.items():
 			if tag[0] not in self.tag or (tag[0] in self.tag and self.tag[tag[0]] > tag[1]):
 				return False
 		return True
+	
 	
 	def hasPrequesites(self,student):
 		profil = student.profil
@@ -43,6 +46,7 @@ class Exercice:
 					return False
 				if subj[p[0]]<p[1]:
 					return False
+			return True
 		return False
 ##############################################################################################################
 
