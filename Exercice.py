@@ -44,6 +44,21 @@ class Exercice:
 				if subj[p[0]]<p[1]:
 					return False
 		return False
+##############################################################################################################
+
+	def hasPreForRev(self,student):
+		profil = student.profil
+		if not self.prequesites:
+			return True
+		if profil.get(self.subject):
+			subj = profil[self.subject]['skills']
+			for p in self.prequesites.items():
+				if not subj.get(p[0]):
+					return False
+				if subj[p[0]]==p[1]:
+					return True
+
+		return False
 
 
 	def __str__(self):
