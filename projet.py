@@ -79,13 +79,22 @@ def next_exercice(meta,dico,student,mode,subject,tag):
     if (mode == Mode.decouverte):
         return meta.tag(tag,student)
     elif (mode == Mode.revision):
+        return meta.tagRev(tag,student)
+        '''
         for key in dico_meta.keys():
             if (dico_meta[key]['subject'] == subject):
-                tag = dico_meta[key]['tag']
+                tag2 = dico_meta[key]['tag']
                 for k,v in dico_meta[key]['tag'].items():
-                    for key,value in student.profil.items() :
-                        if ((k == key) & (v == value)):
-                            return tag
+                    if ( k == tag) :
+                        for key,value in student.profil.items() :
+                            if ((k == key) & (v == value)):
+                                return meta.tagRev(tag2[k],student)
+                            if ((k == key) & (v < value)):
+                                tag_save = meta.tagRev(tag2[k],student)
+                            if (v > tag_save.get(tag)):
+                                tag_save = meta.tagRev(tag2[k],student)
+        return tag_save
+'''
 
     elif (mode == Mode.remise):
         print("Bonjour")
@@ -151,7 +160,10 @@ if __name__ == '__main__':
         mode = Mode[input('Choissisez un des modes disponibles : ')]
         subjectChoose = subject()
         if(mode != Mode.decouverte):
-            tag = notion(subjectChoose)
+            m = notion(subjectChoose)
+            for k,v in s.profil[subjectChoose]['skills'].items():
+                if (k == m):
+                    tag = {m : v}
         nb_exo = 20
         while(nb_exo != 0):
             nb_exo-=1
