@@ -63,12 +63,19 @@ class Exercice:
                     return True
         return False
 
-    def similarTagRemise(self,tags):
-        for tag in tags.items():
-            if tag[0] not in self.tag or (tag[0] in self.tag and self.tag[tag[0]] > tag[1] + 2) or (tag[0] in self.tag and self.tag[tag[0]] > tag[1] - 2):
-                return False
-        return True
-
+    def hasPreForRem(self,student):
+        profil = student.profil
+        if not self.prequesites:
+            return True
+        if profil.get(self.subject):
+            subj = profil[self.subject]['skills']
+            for p in self.prequesites.items():
+                if not subj.get(p[0]):
+                    return False
+                if subj[p[0]]==p[1] or subj[p[0]]-1 == p[1]:
+                    return True
+        return False
+        
     def __str__(self):
         return "Path = "+self.path+" Author = "+self.author+" Title = "+self.title
     

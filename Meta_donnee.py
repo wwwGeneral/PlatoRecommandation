@@ -65,7 +65,7 @@ class Meta_donnee:
         
     def tagRemise(self,tag,student):
         for exo in self.liste:
-            if exo.similarTagRemise(tag) and exo.hasPrequesites(student) and exo.getPath() not in student.hist:
+            if exo.similarTag(tag) and exo.hasPreForRem(student) and exo.getPath() not in student.hist:
                 return (exo.getTag(),exo.getPath())
     
     
