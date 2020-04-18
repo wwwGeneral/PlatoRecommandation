@@ -1599,8 +1599,6 @@ meta = {
 
 }
 
-
-
 # s = Create_student(note_min=0, note_max=100, refus_exo=0.3)
 # init_compétance(s, {'variable' : 10, 'pointer':10, 'array':10})
 

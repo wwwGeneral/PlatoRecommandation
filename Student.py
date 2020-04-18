@@ -25,7 +25,6 @@ class Student:
         mark : note eu a l'exercice
         name : nom de l'exercice
         """
-        print(skills)
         for a in skills.items():
             if(mark >= 70):
                 if(not(self.profil.get(subject))):

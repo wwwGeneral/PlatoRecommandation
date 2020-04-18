@@ -81,8 +81,7 @@ def next_exercice(meta,dico,student,mode,subject,tag):
     elif (mode == Mode.revision):
         return meta.tagRev(tag,student)
     elif (mode == Mode.remise):
-        return meta.tagRemise(tag,student)
-
+        return meta.tagRemise(tag,student) 
 if __name__ == '__main__':
     meta = Meta_donnee(list())
     meta.initialise_meta()
@@ -103,6 +102,7 @@ if __name__ == '__main__':
     for s in students:
         print("=====================================================================================")
         print("Session de : "+s.name)
+        print(s.profil)
         mode = Mode[input('Choissisez un des modes disponibles : ')]
         subjectChoose = subject()
         if(mode != Mode.decouverte):
@@ -112,7 +112,7 @@ if __name__ == '__main__':
                 if (k == m):
                     tag = {m : v}
         else:
-            tag = {'variable':1}
+            tag = meta.newTag(subjectChoose,s)
         nb_exo = 20
         while(nb_exo != 0):
             nb_exo-=1
@@ -124,5 +124,6 @@ if __name__ == '__main__':
                 continue
             s.updateProfil(subjectChoose,exo[0],mark,exo[1])
             print("Exercice "+str(20-nb_exo))
+            print(exo[1])
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
             meta.updatetag(tag,mark,s,subjectChoose,mode)
