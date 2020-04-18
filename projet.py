@@ -97,44 +97,8 @@ def next_exercice(meta,dico,student,mode,subject,tag):
 '''
 
     elif (mode == Mode.remise):
-        print("Bonjour")
-        #Récupère le tag rentré, récupère le niveau de l'élève dans ce tag, puis cherche dans la bdd les exercices possédant ce tag et ce niveau de difficulté.
-        matiere = s.profil.keys()
-        for m in matiere:
-            if (subject == m):
-                for exercice in dico_meta.keys():
-                    exoSubject = dico_meta[exercice]["subject"]
-                    exoTag = dico_meta[exercice]["tag"]
-                    exoPrerequisite = dico_meta[exercice]["prerequisites"]
-                    if (exoSubject == subject):
-                        for prequisite in exoPrerequisite.items():
-                            for skill in s.profil[subject]["skills"]:
-                                if (skill[0] == prequisite[0] and skill[1] >= prequisite[1]):
-                                    bon = True
-                                else:
-                                    bon = False
-                        if (bon) :
-                            for t in exoTag.items():
-                                if (t[0] == tag):
-                                    for skill in s.profil[subject]["skills"][tag]:
-                                        if (skill[1] <= t[1]-1 and skill[1] > t[1] + 2):
-                                            return (exoTag,exercice)
-                                        else:
-                                            print("Votre niveau est trop élevé ou trop bas")
-                                            break
-                                else:
-                                    print("Il n'y a pas d'exercices correspondant au tag sélectionné")
-                                    break
-                        else:
-                            print("Vous n'avez les prérequis")
-                            break
-                    else:
-                        print("Il n'y a pas d'exercice dans cette matière")
-                        break
-            else:
-                print("Vous n'avez pas la matière sélectionné dans votre profil")
-                break    
-    #Gros algorithme permettant de recommander un exercice 
+        return meta.tagRemise(tag,student)
+
 
 if __name__ == '__main__':
     meta = Meta_donnee(list())
