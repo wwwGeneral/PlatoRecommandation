@@ -1599,7 +1599,6 @@ meta = {
 
 }
 
-notions = set({'variable', 'function', 'program', 'type'})
 
 
 # s = Create_student(note_min=0, note_max=100, refus_exo=0.3)
