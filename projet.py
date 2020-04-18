@@ -80,9 +80,61 @@ def next_exercice(meta,dico,student,mode,subject,tag):
         return meta.tag(tag,student,subject)
     elif (mode == Mode.revision):
         return meta.tagRev(tag,student)
-    elif (mode == Mode.remise):
-        return meta.tagRemise(tag,student)
+        '''
+        for key in dico_meta.keys():
+            if (dico_meta[key]['subject'] == subject):
+                tag2 = dico_meta[key]['tag']
+                for k,v in dico_meta[key]['tag'].items():
+                    if ( k == tag) :
+                        for key,value in student.profil.items() :
+                            if ((k == key) & (v == value)):
+                                return meta.tagRev(tag2[k],student)
+                            if ((k == key) & (v < value)):
+                                tag_save = meta.tagRev(tag2[k],student)
+                            if (v > tag_save.get(tag)):
+                                tag_save = meta.tagRev(tag2[k],student)
+        return tag_save
+'''
 
+    elif (mode == Mode.remise):
+        print("Bonjour")
+        #Récupère le tag rentré, récupère le niveau de l'élève dans ce tag, puis cherche dans la bdd les exercices possédant ce tag et ce niveau de difficulté.
+        matiere = s.profil.keys()
+        for m in matiere:
+            if (subject == m):
+                for exercice in dico_meta.keys():
+                    exoSubject = dico_meta[exercice]["subject"]
+                    exoTag = dico_meta[exercice]["tag"]
+                    exoPrerequisite = dico_meta[exercice]["prerequisites"]
+                    if (exoSubject == subject):
+                        for prequisite in exoPrerequisite.items():
+                            for skill in s.profil[subject]["skills"]:
+                                if (skill[0] == prequisite[0] and skill[1] >= prequisite[1]):
+                                    bon = True
+                                else:
+                                    bon = False
+                        if (bon) :
+                            for t in exoTag.items():
+                                if (t[0] == tag):
+                                    for skill in s.profil[subject]["skills"][tag]:
+                                        if (skill[1] <= t[1]-1 and skill[1] > t[1] + 2):
+                                            return (exoTag,exercice)
+                                        else:
+                                            print("Votre niveau est trop élevé ou trop bas")
+                                            break
+                                else:
+                                    print("Il n'y a pas d'exercices correspondant au tag sélectionné")
+                                    break
+                        else:
+                            print("Vous n'avez les prérequis")
+                            break
+                    else:
+                        print("Il n'y a pas d'exercice dans cette matière")
+                        break
+            else:
+                print("Vous n'avez pas la matière sélectionné dans votre profil")
+                break    
+    #Gros algorithme permettant de recommander un exercice 
 if __name__ == '__main__':
     meta = Meta_donnee(list())
     meta.initialise_meta()
@@ -103,6 +155,7 @@ if __name__ == '__main__':
     for s in students:
         print("=====================================================================================")
         print("Session de : "+s.name)
+        print(s.profil)
         mode = Mode[input('Choissisez un des modes disponibles : ')]
         subjectChoose = subject()
         if(mode != Mode.decouverte):
@@ -112,7 +165,7 @@ if __name__ == '__main__':
                 if (k == m):
                     tag = {m : v}
         else:
-            tag = {'variable':1}
+            tag = meta.newTag(subjectChoose,s)
         nb_exo = 20
         while(nb_exo != 0):
             nb_exo-=1
@@ -124,5 +177,6 @@ if __name__ == '__main__':
                 continue
             s.updateProfil(subjectChoose,exo[0],mark,exo[1])
             print("Exercice "+str(20-nb_exo))
+            print(exo[1])
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
             meta.updatetag(tag,mark,s,subjectChoose,mode)
