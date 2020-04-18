@@ -88,7 +88,7 @@ def next_exercice(meta,dico,student,mode,subject,tag):
                             return tag
 
     elif (mode == Mode.remise):
-        print("Bonjour")
+         print("Bonjour")
         #Récupère le tag rentré, récupère le niveau de l'élève dans ce tag, puis cherche dans la bdd les exercices possédant ce tag et ce niveau de difficulté.
         matiere = s.profil.keys()
         for m in matiere:
@@ -124,7 +124,7 @@ def next_exercice(meta,dico,student,mode,subject,tag):
                         break
             else:
                 print("Vous n'avez pas la matière sélectionné dans votre profil")
-                break    
+                break      
     #Gros algorithme permettant de recommander un exercice 
 
 if __name__ == '__main__':
