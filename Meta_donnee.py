@@ -28,7 +28,6 @@ class Meta_donnee:
                 if exo.similarTag(tag) and exo.hasPrequesites(student) and exo.getPath() not in student.hist:
                     return (exo.getTag(),exo.getPath())
             tag = self.newTag(subject,student)
-            print(tag)
             if not tag:
                 return
     
