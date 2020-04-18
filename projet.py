@@ -80,22 +80,6 @@ def next_exercice(meta,dico,student,mode,subject,tag):
         return meta.tag(tag,student,subject)
     elif (mode == Mode.revision):
         return meta.tagRev(tag,student)
-        '''
-        for key in dico_meta.keys():
-            if (dico_meta[key]['subject'] == subject):
-                tag2 = dico_meta[key]['tag']
-                for k,v in dico_meta[key]['tag'].items():
-                    if ( k == tag) :
-                        for key,value in student.profil.items() :
-                            if ((k == key) & (v == value)):
-                                return meta.tagRev(tag2[k],student)
-                            if ((k == key) & (v < value)):
-                                tag_save = meta.tagRev(tag2[k],student)
-                            if (v > tag_save.get(tag)):
-                                tag_save = meta.tagRev(tag2[k],student)
-        return tag_save
-'''
-
     elif (mode == Mode.remise):
         return meta.tagRemise(tag,student)
 
