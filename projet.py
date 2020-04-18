@@ -107,6 +107,7 @@ if __name__ == '__main__':
         subjectChoose = subject()
         if(mode != Mode.decouverte):
             m = notion(subjectChoose)
+            tag = { m : 1}
             for k,v in s.profil[subjectChoose]['skills'].items():
                 if (k == m):
                     tag = {m : v}
