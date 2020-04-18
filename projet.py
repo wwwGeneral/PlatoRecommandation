@@ -113,17 +113,20 @@ if __name__ == '__main__':
                     tag = {m : v}
         else:
             tag = meta.newTag(subjectChoose,s)
-        nb_exo = 20
+        nb_exo = 50
         while(nb_exo != 0):
             nb_exo-=1
             exo = next_exercice(meta,dico_meta,s,mode,subjectChoose,tag)
+            if not exo:
+                print("Aucun exercice trouvé pour votre profil")
+                break
             mark = s.genMark()
             refus = s.refuse()
             if refus:
                 print("refusé")
                 continue
             s.updateProfil(subjectChoose,exo[0],mark,exo[1])
-            print("Exercice "+str(20-nb_exo))
+            print("Exercice "+str(50-nb_exo))
             print(exo[1])
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
             meta.updatetag(tag,mark,s,subjectChoose,mode)
