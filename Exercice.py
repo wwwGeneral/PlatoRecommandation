@@ -30,7 +30,7 @@ class Exercice:
 		#self.tag est le tag de l'exercice
 		#tag est le tag qui s'adapte par rapport au mode
 		for tag in tags.items():
-			if tag[0] not in self.tag or (tag[0] in self.tag and self.tag[tag[0]] > tag[1]):
+			if tag[0] not in self.tag:
 				return False
 		return True
 	
