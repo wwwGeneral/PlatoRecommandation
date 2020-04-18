@@ -37,7 +37,10 @@ class Student:
                     newMark = (a[1]*(mark/100) + self.profil[subject]['skills'][a[0]]*2)/3
                     if(newMark <= 10):
                         if(a[1] > self.profil[subject]['skills'][a[0]]):
-                            self.profil[subject]['skills'][a[0]] = newMark
+                            if(newMark > self.profil[subject]['skills'][a[0]]):
+                                self.profil[subject]['skills'][a[0]] = newMark
+                            else:
+                                self.profil[subject]['skills'][a[0]] = self.profil[subject]['skills'][a[0]]
                         else:
                             self.profil[subject]['skills'][a[0]] = self.profil[subject]['skills'][a[0]]
                     else:
