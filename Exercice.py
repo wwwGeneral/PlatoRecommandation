@@ -53,13 +53,13 @@ class Exercice:
 	def hasPreForRev(self,student):
 		profil = student.profil
 		if not self.prequesites:
-			return True
+			return False
 		if profil.get(self.subject):
 			subj = profil[self.subject]['skills']
 			for p in self.prequesites.items():
 				if not subj.get(p[0]):
 					return False
-				if subj[p[0]]==p[1]:
+				if (subj[p[0]]==p[1]) or (subj[p[0]]+1 == p[1]):
 					return True
 		return False
         
