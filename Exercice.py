@@ -59,8 +59,9 @@ class Exercice:
             for p in self.prequesites.items():
                 if not subj.get(p[0]):
                     return False
-                if round(subj[p[0]]) == p[1]:
-                    return True
+                if round(subj[p[0]]) != p[1]:
+                    return False
+            return True
         return False
         
     def hasPreForRem(self,student):
