@@ -90,5 +90,5 @@ class Meta_donnee:
 
     def tagRev(self,tag,student):
             for exo in self.liste:
-                if exo.hasPreForRev(student) and exo.getPath() not in student.hist:
+                if exo.similarTag(tag) and exo.hasPreForRev(student) and exo.getPath() not in student.hist:
                     return (exo.getTag(),exo.getPath())
