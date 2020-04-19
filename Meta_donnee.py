@@ -98,7 +98,7 @@ class Meta_donnee:
         return newTag
     def tagRev(self,tag,student):
         """
-        Retourne le tag et le chemin d'un exercice correspondant eu mode révision
+        Retourne le tag et le chemin d'un exercice correspondant au mode révision
         """
         for exo in self.liste:
             if exo.similarTag(tag) and exo.hasPreForRev(student) and exo.getPath() not in student.hist:
