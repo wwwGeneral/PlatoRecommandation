@@ -82,6 +82,7 @@ class Meta_donnee:
         return acquired
 
     def tagRemise(self,tag,student):
+        #Renvoie le bon exercice
         for exo in self.liste:
             if exo.similarTag(tag) and exo.hasTagLevel(student,tag) and exo.hasPrequesites(student) and exo.getPath() not in student.hist:
                 return (exo.getTag(),exo.getPath())

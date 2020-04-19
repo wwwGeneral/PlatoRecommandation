@@ -65,6 +65,8 @@ class Exercice:
         return False
         
     def hasTagLevel(self,student,tags):
+        #Vérifie que le niveau des exercices dans la notion demandée soit comprise entre la note de l'élève et la note de l'élève + 2 dans cette notion afin de 
+        # permettre une progression suffisamment douce
         for tag in tags.items():
             if(not((self.tag[tag[0]] <= tag[1]+2) and (self.tag[tag[0]] >= tag[1]))):
                 return False
