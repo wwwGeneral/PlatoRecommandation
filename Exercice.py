@@ -51,6 +51,13 @@ class Exercice:
 ##############################################################################################################
 
     def hasPreForRev(self,student):
+        """
+        Vérifie si l'exercice rempli les conditions du mode révision
+        Ici  :
+        si le niveau de l'élève dans une notion correspond au niveau du prérequis de l'exercice :
+            renvoi True
+        Sinon renvoi False
+        """
         profil = student.profil
         if not self.prequesites:
             return False
