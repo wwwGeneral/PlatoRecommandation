@@ -36,6 +36,8 @@ class Meta_donnee:
                 return
     
     def findNewTag(self,subject,student):
+        if not student.profil.get(subject):
+            student.profil[subject] = {'skills':{}}
         notions = list(self.notion)
         shuffle(notions)
         for noti in notions:

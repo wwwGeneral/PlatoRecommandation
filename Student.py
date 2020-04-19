@@ -9,7 +9,7 @@ class Student:
         markMax : note maximal qu'il peux avoir ( de 0 à 100 avec markMin <= markMax )
         pRefus : probabilité de refus ( nombre entre 0 et 1 )
         profil : dictionnaire contenant les capacités de l'étudiant dans chaque matière pour chaque notion de la matière
-        hist : liste des noms des exercices réussi faisant office d'historique 
+        hist : dictionnaire contenant les exercices réussi faisant office d'historique 
         """
         self.name = name
         self.markMin = markMin
