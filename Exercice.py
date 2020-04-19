@@ -65,7 +65,6 @@ class Exercice:
         return False
         
     def hasTagLevel(self,student,tags):
-        print(tags,"<=============")
         for tag in tags.items():
             if(not((self.tag[tag[0]] <= tag[1]+2) and (self.tag[tag[0]] >= tag[1]))):
                 return False

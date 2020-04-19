@@ -82,7 +82,8 @@ def next_exercice(meta,dico,student,mode,subject,tag):
         newTag = meta.newTagRev(student,subject,tag)
         return meta.tagRev(newTag,student)
     elif (mode == Mode.remise):
-        return meta.tagRemise(tag,student) 
+        newTag = meta.newTagRev(student,subject,tag)
+        return meta.tagRemise(newTag,student) 
 if __name__ == '__main__':
     meta = Meta_donnee(list())
     meta.initialise_meta()
@@ -90,7 +91,7 @@ if __name__ == '__main__':
     skills.append({'C': { 'skills': {'program':1, 'function':1}}})
     skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':4}}})
     skills.append({})
-    skills.append({'C': { 'skills': {'string':10, 'array':10, 'program':10,'function':10, 'variable':10, 'type':10,'pointer':10,'input_output':10,'allocation':10}}})
+    skills.append({'C': { 'skills': {'string':10, 'array':10, 'program':2,'function':10, 'variable':10, 'type':10,'pointer':10,'input_output':10,'allocation':10}}})
 
     students = list()
     #students.append(Student("Jean",30,75,0,skills[2],dict()))
