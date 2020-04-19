@@ -59,22 +59,36 @@ class Exercice:
             for p in self.prequesites.items():
                 if not subj.get(p[0]):
                     return False
-                if subj[p[0]]== round(p[1]):
+                if (subj[p[0]]==p[1]) or (subj[p[0]]+1 == p[1]):
                     return True
         return False
         
     def hasPreForRem(self,student):
         profil = student.profil
         if not self.prequesites:
-            return True
+            return False
         if profil.get(self.subject):
             subj = profil[self.subject]['skills']
             for p in self.prequesites.items():
                 if not subj.get(p[0]):
                     return False
-                if subj[p[0]]==p[1] or subj[p[0]]-1 == p[1]:
-                    return True
+                if (not(p[1] <= subj[p[0]])) or (not(p[1] >= subj[p[0]]-1)):
+                    return False
+            return True
         return False
         
+    def hasTagLevel(self,student):
+        profil = student.profil
+        if not self.tag:
+            return False
+        if profil.get(self.subject):
+            subj = profil[self.subject]['skills']
+            for t in self.tag.items():
+                if not subj.get(t[0]):
+                    return False
+                if (not(t[1] == subj[t[0]])) or (not(t[1] >= subj[t[0]]+1)):
+                    return False
+            return True
+        return False
     def __str__(self):
         return "Path = "+self.path+" Author = "+self.author+" Title = "+self.title
