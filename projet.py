@@ -56,8 +56,7 @@ def notion(subject):
                 2:notions[subject][2],
                 3:notions[subject][3],
                 4:notions[subject][4],
-                5:notions[subject][5],
-                6:notions[subject][6]
+                5:notions[subject][5]
             }
         elif(subject == "Python"): 
             switcher={
@@ -75,6 +74,7 @@ def notion(subject):
         else:
             print(a)
             return a
+
 def next_exercice(meta,dico,student,mode,subject,tag):
     if (mode == Mode.decouverte):
         return meta.tag(tag,student,subject)
@@ -84,6 +84,7 @@ def next_exercice(meta,dico,student,mode,subject,tag):
     elif (mode == Mode.remise):
         newTag = meta.newTagRev(student,subject,tag)
         return meta.tagRemise(newTag,student) 
+
 if __name__ == '__main__':
     meta = Meta_donnee(list())
     meta.initialise_meta()
@@ -91,13 +92,23 @@ if __name__ == '__main__':
     skills.append({'C': { 'skills': {'program':1, 'function':1}}})
     skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':4}}})
     skills.append({})
-    skills.append({'C': { 'skills': {'string':10, 'array':10, 'program':10,'function':10, 'variable':10, 'type':10,'pointer':10,'input_output':10,'allocation':10}}})
+    skills.append({'C': { 'skills': {'string':10, 'array':10, 'program':0,'function':10,
+    'variable':10, 'type':10,'pointer':0,'input_output':0,'allocation':0,'structure':10,'macro':0,'recursion':10,'bitwise':10}}})
+    skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':3,'function':1, 'variable':1}}})
 
     students = list()
-    #students.append(Student("Jean",30,75,0,skills[2],dict()))
-    #students.append(Student("Pierre",50,100,1,skills[0],dict()))
-    students.append(Student("Albert",90,100,0,skills[3],dict()))
-    #students.append(Student("Marcel",80,100,0.3,skills[3],dict()))
+
+    # Découverte
+    #students.append(Student("Parcours precis 1",100,100,0,skills[0],dict(),dict()))
+
+    # Remise à niveau
+    #students.append(Student("Parcours precis 2",100,100,0,skills[3],dict(),dict()))
+
+    # Découverte
+    #students.append(Student("Parcours precis 3 - Eleve Mauvais",30,75,0,skills[0],dict(),dict()))
+    #students.append(Student("Parcours precis 3 - Eleve Moyen",50,75,0,skills[0],dict(),dict()))
+    #students.append(Student("Parcours precis 3 - Eleve Bon",90,100,0,skills[0],dict(),dict()))
+
 
     dico_meta = meta_bdd.meta
 
@@ -111,7 +122,7 @@ if __name__ == '__main__':
             tag = notion(subjectChoose)
         else:
             tag = meta.newTag(subjectChoose,s)
-        nb_exo = 90
+        nb_exo = 50
         while(nb_exo != 0):
             nb_exo-=1
             exo = next_exercice(meta,dico_meta,s,mode,subjectChoose,tag)
@@ -124,7 +135,7 @@ if __name__ == '__main__':
                 print("refusé")
                 continue
             s.updateProfil(subjectChoose,exo[0],mark,exo[1])
-            print("Exercice "+str(90-nb_exo))
+            print("Exercice "+str(50-nb_exo))
             print(exo[1])
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
             meta.updatetag(tag,mark,s,subjectChoose,mode)

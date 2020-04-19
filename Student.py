@@ -2,14 +2,15 @@
 class Student:
     """Classe definissant un etudiant"""
 
-    def __init__(self, name, markMin, markMax, pRefus, profil, hist):
+    def __init__(self, name, markMin, markMax, pRefus, profil, hist, histAll):
         """
         name : nom de l'etudiant
         markMin : note minimal qu'il peux avoir ( de 0 à 100 avec markMin <= markMax )
         markMax : note maximal qu'il peux avoir ( de 0 à 100 avec markMin <= markMax )
         pRefus : probabilité de refus ( nombre entre 0 et 1 )
         profil : dictionnaire contenant les capacites de l'etudiant dans chaque matière pour chaque notion de la matiere
-        hist : dictionnaire contenant les exercices réussi et leurs tags associes faisant office d'historique 
+        hist : dictionnaire contenant les exercices réussi et leurs tags associes faisant office d'historique
+        histAll : dictionnaire contenant tout les exercices et leurs tags associes faisant office d'historique
         """
         self.name = name
         self.markMin = markMin
@@ -17,6 +18,7 @@ class Student:
         self.pRefus = pRefus
         self.profil = profil
         self.hist = hist
+        self.histAll = histAll
 
     def updateProfil(self, subject, skills, mark, name):
         """
@@ -55,6 +57,7 @@ class Student:
                 if(self.profil.get((a[0])) and a[1]<=self.profil[subject]['skills'][a[0]]):
                     # On fait la moyenne entre la note du profil * 3 et la note de l'exercice relative à la réussite pour une régression plus lente que la progression
                     self.profil[subject]['skills'][a[0]] = (self.profil[subject]['skills'][a[0]]*3 + a[1]*(mark/100))/4
+            self.histAll[name] = skills
 
     def refuse(self):
         """
