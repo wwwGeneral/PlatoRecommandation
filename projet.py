@@ -79,7 +79,8 @@ def next_exercice(meta,dico,student,mode,subject,tag):
     if (mode == Mode.decouverte):
         return meta.tag(tag,student,subject)
     elif (mode == Mode.revision):
-        return meta.tagRev(tag,student)
+        newTag = meta.newTagRev(student,subject,tag)
+        return meta.tagRev(newTag,student)
     elif (mode == Mode.remise):
         return meta.tagRemise(tag,student) 
 if __name__ == '__main__':
@@ -106,11 +107,7 @@ if __name__ == '__main__':
         mode = Mode[input('Choissisez un des modes disponibles : ')]
         subjectChoose = subject()
         if(mode != Mode.decouverte):
-            m = notion(subjectChoose)
-            tag = { m : 1}
-            for k,v in s.profil[subjectChoose]['skills'].items():
-                if (k == m):
-                    tag = {m : v}
+            tag = notion(subjectChoose)
         else:
             tag = meta.newTag(subjectChoose,s)
         nb_exo = 90

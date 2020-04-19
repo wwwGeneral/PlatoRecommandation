@@ -87,7 +87,12 @@ class Meta_donnee:
                 return (exo.getTag(),exo.getPath())
 
 ##############################################################################################################
-
+    def newTagRev(self,student,subject,tag):
+        newTag = {tag : 0}
+        for k,v in student.profil[subject]['skills'].items():
+            if (k == tag):
+                newTag = {tag : round(v)}
+        return newTag
     def tagRev(self,tag,student):
             for exo in self.liste:
                 if exo.similarTag(tag) and exo.hasPreForRev(student) and exo.getPath() not in student.hist:
