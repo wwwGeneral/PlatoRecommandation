@@ -1,5 +1,7 @@
 from Student import *
 class Exercice:
+    """Classe représentant un exercice"""
+
     def __init__(self,path,author,title,subject,tag,prequesites):
         self.path = path
         self.author = author
@@ -27,8 +29,13 @@ class Exercice:
         return self.subject
 
     def similarTag(self,tags):
-        #self.tag est le tag de l'exercice
-        #tag est le tag qui s'adapte par rapport au mode
+        """self.tag est le tag de l'exercice
+        tag est le tag qui s'adapte par rapport au mode
+        recherche dans le tag en paramètre, un tag similaire à celui-ci, renvoie False si le tag n'est pas présent dans l'exercice ou si la difficulté de l'exercice est trop éloigné au niveau de l'élève.
+        renvoie True sinon.
+        tag similaire : un tag similaire est un tag qui a une difficulté proche d'un autre tag tagdiff-1 < tagsimilairediff < tagdiff+1"""
+
+
         for tag in tags.items():
             if tag[0] not in self.tag or (tag[0] in self.tag and (tag[1]-self.tag[tag[0]]>1 or tag[1]-self.tag[tag[0]]<-1)):
                 return False
@@ -36,6 +43,11 @@ class Exercice:
 
 
     def hasPrequesites(self,student):
+        """Renvoie True si l'élève a les prérequis et False sinon
+        L'élève a les prérequis si:
+            L'exercice ne possède pas de prérequis
+            L'élève possède tous les tags dans le prérequis
+            La difficulté des prérequis de l'exercice est inférieur au niveau de l'élève"""
         profil = student.profil
         if not self.prequesites:
            return True
@@ -51,13 +63,6 @@ class Exercice:
 ##############################################################################################################
 
     def hasPreForRev(self,student):
-        """
-        Vérifie si l'exercice rempli les conditions du mode révision
-        Ici  :
-        si le niveau de l'élève dans une notion correspond au niveau du prérequis de l'exercice :
-            renvoi True
-        Sinon renvoi False
-        """
         profil = student.profil
         if not self.prequesites:
             return False
@@ -66,18 +71,22 @@ class Exercice:
             for p in self.prequesites.items():
                 if not subj.get(p[0]):
                     return False
-                if round(subj[p[0]]) != p[1]:
-                    return False
-            return True
+                if (subj[p[0]]==p[1]) or (subj[p[0]]+1 == p[1]):
+                    return True
         return False
         
-    def hasTagLevel(self,student,tags):
-        #Vérifie que le niveau des exercices dans la notion demandée soit comprise entre la note de l'élève et la note de l'élève + 2 dans cette notion afin de 
-        # permettre une progression suffisamment douce
-        for tag in tags.items():
-            if(not((self.tag[tag[0]] <= tag[1]+2) and (self.tag[tag[0]] >= tag[1]))):
-                return False
-        return True
-
+    def hasPreForRem(self,student):
+        profil = student.profil
+        if not self.prequesites:
+            return True
+        if profil.get(self.subject):
+            subj = profil[self.subject]['skills']
+            for p in self.prequesites.items():
+                if not subj.get(p[0]):
+                    return False
+                if subj[p[0]]==p[1] or subj[p[0]]-1 == p[1]:
+                    return True
+        return False
+        
     def __str__(self):
         return "Path = "+self.path+" Author = "+self.author+" Title = "+self.title
