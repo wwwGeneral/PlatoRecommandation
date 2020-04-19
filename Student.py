@@ -34,7 +34,7 @@ class Student:
                 elif(not(self.profil[subject]['skills'].get((a[0])))):
                     self.profil[subject]['skills'][a[0]] = a[1]*(mark/100)
                 else:
-                    newMark = (a[1]*(mark/100) + self.profil[subject]['skills'][a[0]]*2)/3
+                    newMark = (a[1]*(mark/100) + self.profil[subject]['skills'][a[0]])/2
                     if(newMark <= 10):
                         if(a[1] > self.profil[subject]['skills'][a[0]]):
                             if(newMark > self.profil[subject]['skills'][a[0]]):
