@@ -89,12 +89,18 @@ class Meta_donnee:
 
 ##############################################################################################################
     def newTagRev(self,student,subject,tag):
+        """
+        Retourne un nouveau tag en fonction de l'évolution de l'élève
+        """
         newTag = {tag : 0}
         for k,v in student.profil[subject]['skills'].items():
             if (k == tag):
                 newTag = {tag : round(v)}
         return newTag
     def tagRev(self,tag,student):
-            for exo in self.liste:
-                if exo.similarTag(tag) and exo.hasPreForRev(student) and exo.getPath() not in student.hist:
-                    return (exo.getTag(),exo.getPath())
+        """
+        Retourne le tag et le chemin d'un exercice correspondant au mode révision
+        """
+        for exo in self.liste:
+            if exo.similarTag(tag) and exo.hasPreForRev(student) and exo.getPath() not in student.hist:
+                return (exo.getTag(),exo.getPath())
