@@ -31,6 +31,8 @@ class Meta_donnee:
                     print(exo.similarTag(tag))
                     return (exo.getTag(),exo.getPath())
             tag = self.newTag(subject,student)
+            student_tag = self.getAcquiredTag(student,subject)
+            liste_not.update(student_tag)
             liste_not.update(tag)
             if not tag or liste_not == self.notion:
                 return
@@ -71,6 +73,13 @@ class Meta_donnee:
                 if tag[matiere] >= 1:
                     tag[matiere] = 1
         return tag
+
+    def getAcquiredTag(self,student,subject):
+        acquired = set()
+        for noti in student.profil[subject]['skills']:
+            if student.profil[subject]['skills'][noti] >=6:
+                acquired.add(noti)
+        return acquired
         
     def tagRemise(self,tag,student):
         for exo in self.liste:

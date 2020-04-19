@@ -89,12 +89,12 @@ if __name__ == '__main__':
     skills.append({'C': { 'skills': {'program':1, 'function':1}}})
     skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':4}}})
     skills.append({})
-    skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':1,'function':1, 'variable':1}}})
+    skills.append({'C': { 'skills': {'string':10, 'array':10, 'program':10,'function':10, 'variable':10, 'type':10,'pointer':10,'input_output':10,'allocation':10}}})
 
     students = list()
     #students.append(Student("Jean",30,75,0,skills[2],dict()))
     #students.append(Student("Pierre",50,100,1,skills[0],dict()))
-    students.append(Student("Albert",50,100,0,skills[1],dict()))
+    students.append(Student("Albert",90,100,0,skills[3],dict()))
     #students.append(Student("Marcel",80,100,0.3,skills[3],dict()))
 
     dico_meta = meta_bdd.meta
@@ -113,7 +113,7 @@ if __name__ == '__main__':
                     tag = {m : v}
         else:
             tag = meta.newTag(subjectChoose,s)
-        nb_exo = 50
+        nb_exo = 90
         while(nb_exo != 0):
             nb_exo-=1
             exo = next_exercice(meta,dico_meta,s,mode,subjectChoose,tag)
@@ -126,7 +126,7 @@ if __name__ == '__main__':
                 print("refusé")
                 continue
             s.updateProfil(subjectChoose,exo[0],mark,exo[1])
-            print("Exercice "+str(50-nb_exo))
+            print("Exercice "+str(90-nb_exo))
             print(exo[1])
             print("Note reçu : "+str(mark)+" | profil : ", s.profil)
             meta.updatetag(tag,mark,s,subjectChoose,mode)
