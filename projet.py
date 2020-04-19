@@ -99,7 +99,7 @@ if __name__ == '__main__':
     students = list()
 
     # Découverte
-    #students.append(Student("Parcours precis 1",100,100,0,skills[0],dict(),dict()))
+    students.append(Student("Parcours precis 1",100,100,0,skills[0],dict(),dict()))
 
     # Remise à niveau
     #students.append(Student("Parcours precis 2",100,100,0,skills[3],dict(),dict()))
