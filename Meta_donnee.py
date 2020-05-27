@@ -36,7 +36,6 @@ class Meta_donnee:
             for exo in self.liste:
                 #Si l'élève possède les prérequis, si l'exercice possède un tag similaire et si l'exercice n'est pas présent dans l'historique on renvoie un tuple (tag de l'exercice,chemin)
                 if exo.similarTag(tag) and exo.hasPrequesites(student) and exo.path not in student.hist:
-                    print(exo.similarTag(tag))
                     return (exo.getTag(),exo.getPath())
             tag = self.newTag(subject,student)
             student_tag = self.getAcquiredTag(student,subject)
@@ -115,3 +114,15 @@ class Meta_donnee:
             for exo in self.liste:
                 if exo.hasPreForRev(student) and exo.getPath() not in student.hist:
                     return (exo.getTag(),exo.getPath())
+
+    def newTagRev(self,student,subject,tag):
+        """
+        Retourne un nouveau tag en fonction de l'évolution de l'élève
+        """
+        newTag = {tag : 0}
+        if not student.profil.get(subject):
+            student.profil[subject] = {'skills':{}}
+        for k,v in student.profil[subject]['skills'].items():
+            if (k == tag):
+                newTag = {tag : round(v)}
+        return newTag

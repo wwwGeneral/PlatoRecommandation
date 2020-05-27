@@ -89,7 +89,7 @@ if __name__ == '__main__':
     meta = Meta_donnee(list())
     meta.initialise_meta()
     skills = list()
-    skills.append({'C': { 'skills': {'program':1, 'function':1}}})
+    skills.append({'C': { 'skills': {'program':8, 'function':8}}})
     skills.append({'C': { 'skills': {'string':1, 'array':1, 'program':4}}})
     skills.append({})
     skills.append({'C': { 'skills': {'string':10, 'array':10, 'program':0,'function':10,
@@ -99,15 +99,17 @@ if __name__ == '__main__':
     students = list()
 
     # Découverte
-    students.append(Student("Parcours precis 1",100,100,0,skills[0],dict(),dict()))
+    # Prendre un étudiant déjà fort sur une ou plusieurs notions et générer le parcours pour apprendre le reste des notions.
+    #students.append(Student("Parcours precis 1",100,100,0,skills[0],dict(),dict()))
 
     # Remise à niveau
-    #students.append(Student("Parcours precis 2",100,100,0,skills[3],dict(),dict()))
+    # Prendre un étudiant avec un passif vierge (zéro dans toutes les notions) et tentez de rusher une ou plusieurs notions spécifiques.
+    #students.append(Student("Parcours precis 2",100,100,0,skills[2],dict(),dict()))
 
     # Découverte
-    #students.append(Student("Parcours precis 3 - Eleve Mauvais",30,75,0,skills[0],dict(),dict()))
-    #students.append(Student("Parcours precis 3 - Eleve Moyen",50,75,0,skills[0],dict(),dict()))
-    #students.append(Student("Parcours precis 3 - Eleve Bon",90,100,0,skills[0],dict(),dict()))
+    #students.append(Student("Parcours precis 3 - Eleve Mauvais",30,75,0,skills[2],dict(),dict()))
+    #students.append(Student("Parcours precis 3 - Eleve Moyen",50,75,0,skills[2],dict(),dict()))
+    #students.append(Student("Parcours precis 3 - Eleve Bon",90,100,0,skills[2],dict(),dict()))
 
 
     dico_meta = meta_bdd.meta
